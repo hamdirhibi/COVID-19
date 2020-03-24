@@ -5,3 +5,71 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
+
+<ion-content>
+
+	<!-- Show loading screen -->
+	<div align="center" *ngIf="!startGame">
+		<br>
+		<h2>Match all cards to win!</h2>
+		<p>You have a total of <b>{{userLife}}</b> tries.</p>
+		<br>
+		<h4>Start in <span style="color:#CC0000;font-size:24px;">{{countDown}}</span>...</h4>
+	</div>
+
+	<!-- Actual cards display -->
+	<div align="center" *ngIf="startGame && gameState == 'init'">
+		<h2>Match all cards to win!</h2>
+		<ion-row align-items-center text-center size="8">
+
+			<ion-col align-self-center size="3" *ngFor="let c of cardsArray; let i = index">
+				<!-- show card background -->
+				<img src="../assets/img/cards/background.png" *ngIf="c.pos != selectCard1pos && c.pos != selectCard2pos && c.val > -1" (click)="selectCard(c.pos, c.val, i)" style="width:80px; height:80px; border: solid 2px #000; border-radius: 12px;">
+				<!-- show card 1 selected -->
+				<img [src]="imageDir + images[c.val] + '.jpg'" *ngIf="c.pos == selectCard1pos && c.val > -1" style="width:80px; height:80px; border: solid 2px #000; border-radius: 12px;">
+				<!-- show card 2 selected -->
+				<img [src]="imageDir + images[c.val] + '.jpg'" *ngIf="c.pos == selectCard2pos && c.val > -1" style="width:80px; height:80px; border: solid 2px #000; border-radius: 12px;">
+				<!-- show hidden card -->
+				<img *ngIf="c.val == -1" style="width:80px; height:80px; border: solid 2px #000; border-radius: 12px;visibility: hidden;">
+
+			</ion-col>
+		</ion-row>
+	</div>
+
+	<div align="center" *ngIf="startGame && gameState == 'init'">
+		<br>
+		<ion-row>
+			<ion-col col-9>
+				<p>You have <span style="color:#00CC00; font-size: 24px;">{{userLife}}</span> tries...</p>
+			</ion-col>
+			<ion-col>
+				<p><span style="color:#CC0000; font-size: 24px;">{{shownTime}}</span></p>
+			</ion-col>
+		</ion-row>
+	</div>
+
+	<!-- Show Win screen -->
+	<div *ngIf="gameState =='win'" align="center">
+		<br>
+		<p>You have <span style="color:#00CC00; font-size: 24px;">WON</span> this one!</p>
+		<p>Would you like to play again?</p>
+		<br>
+		<ion-button size="large" color="danger" (click)="restartGame()">
+			<ion-icon name="repeat"></ion-icon>
+			&nbsp; &nbsp; Play Again
+		</ion-button>
+	</div>
+
+	<!-- Show Lose screen -->
+	<div *ngIf="gameState == 'lose'" align="center">
+		<br>
+		<p>You have <span style="color:#CC0000; font-size: 24px;">LOST</span> this one!</p>
+		<p>Would you like to try again?</p>
+		<br>
+		<ion-button size="large" color="danger" (click)="restartGame()">
+			<ion-icon name="repeat"></ion-icon>
+			&nbsp; &nbsp; Try Again
+		</ion-button>
+	</div>
+
+</ion-content>
