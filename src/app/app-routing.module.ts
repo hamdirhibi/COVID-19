@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'enter-code', loadChildren: './enter-code/enter-code.module#EnterCodePageModule' },
   { path: 'conversation', loadChildren: './conversation/conversation.module#ConversationPageModule' },
   { path: 'news-single', loadChildren: './news/news.module#NewsPageModule' },
+  { path: 'tabs', loadChildren: './tabs/tabs.module#TabsPageModule' },
 ];
 @NgModule({
   imports: [

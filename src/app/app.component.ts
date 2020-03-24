@@ -14,6 +14,7 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar
   ) {
+    this.sideMenu();
     this.initializeApp();
   }
 
@@ -23,4 +24,42 @@ export class AppComponent {
       this.splashScreen.hide();
     });
   }
+  navigate : any;
+  sideMenu()
+  {
+    this.navigate =
+    [
+      {
+        title : "News",
+        url   : "/tabs/tabs/tab4",
+        icon  : "planet"
+      },
+      {
+        title : "Profil",
+        url   : "/tabs/tabs/tab3",
+        icon  : "person"
+      },
+      {
+        title : "Conversations",
+        url   : "/tabs/tabs/tab1",
+        icon  : "chatboxes"
+      },
+      {
+        title : "Health",
+        url   : "/tabs/tabs/tab5",
+        icon  : "heart"
+      },
+      // {
+      //   title : "Contacts",
+      //   url   : "/tabs/tabs/tab2",
+      //   icon  : "contacts"
+      // },
+      {
+        title : "Games",
+        url   : "/tabs/tabs/tab6",
+        icon  : "logo-playstation"
+      },
+    ]
+  }
+
 }
