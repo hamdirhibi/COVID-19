@@ -1,0 +1,23 @@
+<ion-header>
+  
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>    <ion-title>
+      News
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-img [src]="urlToImage"></ion-img>
+    <ion-card-content>
+      <ion-card-title>{{title}}</ion-card-title>
+      <strong>{{author}}</strong>
+      <div>
+        {{content}}
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
