@@ -9,9 +9,9 @@ import { Platform, NavController } from '@ionic/angular';
 })
 export class SignupPage implements OnInit {
 
-  private countries: Array<any> = countryCodes;
-  private confirmData: any = { code: '+1' }
-  private logoPath = "assets/imgs/chat.png";
+   countries: Array<any> = countryCodes;
+   confirmData: any = { code: '+1' }
+   logoPath = "assets/imgs/chat.png";
 
   constructor(
     private platform: Platform,

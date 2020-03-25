@@ -7,12 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConversationPage implements OnInit {
 
-  private contactInfo: any = {
+   contactInfo: any = {
     name: 'JOHN DOE',
     status: 'ONLINE'
   }
-  private showOptions: boolean = false;
-  private messages: Array<any> = [
+   showOptions: boolean = false;
+   messages: Array<any> = [
     { text: "Hey what's up?", type: 'received', created: '14:02' },
     { text: "Nothing", type: 'send', created: '14:05' },
     { text: "Want to go to the movies?", type: 'send', created: '14:05' },
