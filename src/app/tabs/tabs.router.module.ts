@@ -61,6 +61,16 @@ const routes: Routes = [
           }
         ]
       },
+
+      {
+        path: 'tab7',
+        children: [
+          {
+            path: '',
+            loadChildren: '../tab7/tab7.module#Tab7PageModule'
+          }
+        ]
+      },
       
       {
         path: '',

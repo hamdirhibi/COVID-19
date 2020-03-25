@@ -59,6 +59,11 @@ export class AppComponent {
         url   : "/tabs/tabs/tab6",
         icon  : "logo-playstation"
       },
+      {
+        title : "E-Learning",
+        url   : "/tabs/tabs/tab7",
+        icon  : "book"
+      },
     ]
   }
 

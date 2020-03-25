@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: 'conversation', loadChildren: './conversation/conversation.module#ConversationPageModule' },
   { path: 'news-single', loadChildren: './news/news.module#NewsPageModule' },
   { path: 'tabs', loadChildren: './tabs/tabs.module#TabsPageModule' },
+  { path: 'tab7', loadChildren: './tab7/tab7.module#Tab7PageModule' },
 ];
 @NgModule({
   imports: [
