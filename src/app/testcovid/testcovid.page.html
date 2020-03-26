@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+       Test Yourself
+    </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  
+  
+  <div *ngIf="index < 6" class="login-form">  
+    <ion-button  color="tertiary" [disabled]="index === 0" (click)="return()"><ion-icon name="arrow-back"></ion-icon></ion-button>
+    <h3 text-center>
+      <strong>{{questions[index]}}</strong>
+    </h3>
+    <div text-center *ngIf="message"  >
+       <p style="color: red;">You need to select Yes or No</p> 
+    </div>
+    <ion-list lines="none">
+      <ion-radio-group>
+     
+      <ion-item>
+        <ion-label>Yes</ion-label>
+        <ion-radio name="resp"
+        (click)="choose('Yes')" [checked]="statusYes[index]"></ion-radio>
+
+      </ion-item>
+
+      <ion-item>
+        <ion-label>No</ion-label>
+        <ion-radio name="resp"
+        (click)="choose('No')"  [checked]="statusNo[index]"></ion-radio>
+
+     
+      </ion-item>
+    </ion-radio-group>
+   
+    </ion-list>
+
+    <ion-button mode="ios" (click)="next()" color="tertiary" expand="block"  >
+      Confirm & Pass to next question
+    </ion-button>
+  </div>
+
+
+  <div *ngIf="index === 6" align="center">
+		<br>
+		<p >You have <span  style="color:#00CC00; font-size: 24px;">{{score}} </span>score</p>
+		<p *ngIf="score < 4">Your condition does not seem to be of concern.</p>
+    <p *ngIf="score >= 4">You need to call a doctor now</p>
+    <br>
+    <ion-button size="large" color="tertiary" (click)="restart()">
+			<ion-icon name="repeat"></ion-icon>
+			&nbsp; &nbsp; Repeat test
+		</ion-button>
+	</div>
+   
+</ion-content>

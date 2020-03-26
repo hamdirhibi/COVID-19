@@ -7,14 +7,14 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 })
 export class ConversationPage implements OnInit {
   @ViewChild('scrollframe') scrollFrame: ElementRef;
-  private scrollContainer: any;
-    private contactInfo: any = {
+   scrollContainer: any;
+   contactInfo: any = {
     name: 'Amal',
     status: 'ONLINE'
   }
   message : String =""; 
-  private showOptions: boolean = false;
-  private messages: Array<any> = [
+  showOptions: boolean = false;
+  messages: Array<any> = [
     { text: "Hey what's up?", type: 'received', created: '14:02' },
     { text: "Nothing", type: 'send', created: '14:05' },
     { text: "Want to go to the movies?", type: 'send', created: '14:05' },

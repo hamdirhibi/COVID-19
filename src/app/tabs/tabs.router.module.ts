@@ -71,7 +71,25 @@ const routes: Routes = [
           }
         ]
       },
-      
+      {
+        path: 'testcovid',
+        children:[
+          {
+            path:'',
+            loadChildren: '../testcovid/testcovid.module#TestcovidPageModule'
+          }
+        ]
+      },
+      {
+        path: 'quiz',
+        children:[
+          {
+            path:'',
+            loadChildren: '../quiz/quiz.module#QuizPageModule'
+          }
+        ]
+      },
+
       {
         path: '',
         redirectTo: '/tabs/tabs/tab1',

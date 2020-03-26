@@ -8,7 +8,7 @@ import { NavController } from '@ionic/angular';
 })
 export class Tab1Page {
 
-  private chatList: Array<any> = [
+   chatList: Array<any> = [
     {
       user: { name: 'John Doe', avatar: 'https://ui-avatars.com/api/?name=John+Doe' },
       message: { snippet: 'See you later', created: '09:00 AM' }

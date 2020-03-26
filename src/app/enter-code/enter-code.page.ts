@@ -8,8 +8,8 @@ import { NavController } from '@ionic/angular';
 })
 export class EnterCodePage implements OnInit {
 
-  private confirmationCode: string = "";
-  private phone: string = "+52 1234567";
+   confirmationCode: string = "";
+   phone: string = "+52 1234567";
 
   constructor(
     private navCtrl: NavController
