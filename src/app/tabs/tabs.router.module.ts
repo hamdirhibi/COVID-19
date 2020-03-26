@@ -81,6 +81,16 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'quiz',
+        children:[
+          {
+            path:'',
+            loadChildren: '../quiz/quiz.module#QuizPageModule'
+          }
+        ]
+      },
+
+      {
         path: '',
         redirectTo: '/tabs/tabs/tab1',
         pathMatch: 'full'

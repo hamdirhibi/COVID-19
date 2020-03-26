@@ -66,7 +66,7 @@ restart(){
 
  next(){
    this.index++;
-   alert(this.index);
+ 
 }
 
 

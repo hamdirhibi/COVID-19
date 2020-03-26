@@ -1,6 +1,7 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>quiz</ion-title>
+    <ion-title>Are you safe?
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -44,17 +45,17 @@
       Next Question <ion-icon name="arrow-dropright"></ion-icon>
     </ion-button>
 
-    <div *ngIf="index === 5" align="center">
-      <br>
-      <p >See more <span  style="color:#00CC00; font-size: 24px;">here</span></p>
-    
-      <br>
-      <ion-button size="large" color="tertiary" (click)="restart()">
-        <ion-icon name="repeat"></ion-icon>
-        &nbsp; &nbsp; Repeat test
-      </ion-button>
-    </div>
 </div>  
-  
+<div *ngIf="index == 5" align="center">
+  <br>
+  <p >Thank you, you can have more information in our <span  style="color:#00CC00; font-size: 24px;">Health section</span></p>
+
+  <br>
+  <ion-button size="large" color="tertiary" (click)="restart()">
+    <ion-icon name="repeat"></ion-icon>
+    &nbsp; &nbsp; Repeat test
+  </ion-button>
+</div>
+
 
 </ion-content>
