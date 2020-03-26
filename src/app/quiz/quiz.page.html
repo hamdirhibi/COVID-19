@@ -1,6 +1,7 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>Are you safe?
+    <ion-title>
+      {{"QUIZ.f" | translate}}
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,14 +15,14 @@
       <ion-radio-group>
      
         <ion-item>
-          <ion-label>Yes</ion-label>
+          <ion-label>{{"QUIZ.y" | translate}}</ion-label>
           <ion-radio name="resp"
           (click)="choose('Yes')" [checked]="statusYes[index]"></ion-radio>
   
         </ion-item>
   
         <ion-item>
-          <ion-label>No</ion-label>
+          <ion-label>{{"QUIZ.n" | translate}}</ion-label>
           <ion-radio name="resp"
           (click)="choose('No')"  [checked]="statusNo[index]"></ion-radio>
   
@@ -42,18 +43,18 @@
     </div>
 
     <ion-button *ngIf="statusYes[index] || statusNo[index]" mode="ios" (click)="next()" color="tertiary" expand="block"  >
-      Next Question <ion-icon name="arrow-dropright"></ion-icon>
+      {{"QUIZ.button" | translate}} <ion-icon name="arrow-dropright"></ion-icon>
     </ion-button>
 
 </div>  
 <div *ngIf="index == 5" align="center">
   <br>
-  <p >Thank you, you can have more information in our <span  style="color:#00CC00; font-size: 24px;">Health section</span></p>
+  <p >{{"QUIZ.p" | translate}} <span  style="color:#00CC00; font-size: 24px;">{{"QUIZ.pend" | translate}}</span></p>
 
   <br>
   <ion-button size="large" color="tertiary" (click)="restart()">
     <ion-icon name="repeat"></ion-icon>
-    &nbsp; &nbsp; Repeat test
+    &nbsp; &nbsp; {{"QUIZ.repeat" | translate}}
   </ion-button>
 </div>
 

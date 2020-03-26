@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-title>
-       Test Yourself
+       {{"TEST YOURSELF.title" | translate}}
     </ion-title>
 
   </ion-toolbar>
@@ -22,14 +22,16 @@
       <ion-radio-group>
      
       <ion-item>
-        <ion-label>Yes</ion-label>
+        <ion-label>       {{"TEST YOURSELF.y" | translate}}
+        </ion-label>
         <ion-radio name="resp"
         (click)="choose('Yes')" [checked]="statusYes[index]"></ion-radio>
 
       </ion-item>
 
       <ion-item>
-        <ion-label>No</ion-label>
+        <ion-label>       {{"TEST YOURSELF.n" | translate}}
+        </ion-label>
         <ion-radio name="resp"
         (click)="choose('No')"  [checked]="statusNo[index]"></ion-radio>
 
@@ -40,20 +42,20 @@
     </ion-list>
 
     <ion-button mode="ios" (click)="next()" color="tertiary" expand="block"  >
-      Confirm & Pass to next question
+      {{"TEST YOURSELF.button" | translate}}
     </ion-button>
   </div>
 
 
   <div *ngIf="index === 6" align="center">
 		<br>
-		<p >You have <span  style="color:#00CC00; font-size: 24px;">{{score}} </span>score</p>
-		<p *ngIf="score < 4">Your condition does not seem to be of concern.</p>
-    <p *ngIf="score >= 4">You need to call a doctor now</p>
+		<p >{{"TEST YOURSELF.p" | translate}} <span  style="color:#00CC00; font-size: 24px;">{{score}} </span>{{"TEST YOURSELF.pend" | translate}}</p>
+		<p *ngIf="score < 4">{{"TEST YOURSELF.c1" | translate}}</p>
+    <p *ngIf="score >= 4">{{"TEST YOURSELF.c2" | translate}}</p>
     <br>
     <ion-button size="large" color="tertiary" (click)="restart()">
 			<ion-icon name="repeat"></ion-icon>
-			&nbsp; &nbsp; Repeat test
+			&nbsp; &nbsp; {{"TEST YOURSELF.repeat" | translate}}
 		</ion-button>
 	</div>
    

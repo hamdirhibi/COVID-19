@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { Tab4page } from './tab4.page';
 import { NewsService } from '../news.service';
+import { TranslateModule } from '@ngx-translate/core';
 const routes: Routes = [
   {
     path: '',
@@ -21,6 +22,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     HttpClientModule,
+    TranslateModule.forChild(), 
+
     RouterModule.forChild([{ path: '', component: Tab4page }])
   ],
   declarations: [Tab4page],

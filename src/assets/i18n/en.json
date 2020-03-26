@@ -1,0 +1,79 @@
+{
+    "CONVERSATION" : {
+        "title" : "Conversation"
+
+    }, 
+    "CONTACTS" : {
+        "title" : "Contact"
+    } , 
+    "NEWS" : {
+        "title" : "News"
+
+    },
+    "BEST PRACTICES" : {
+        "title" : "Best Practices",
+        "CT1" : "Basic protective measures against the new coronavirus",
+        "D1" : "Stay aware of the latest information on the COVID-19 outbreak, available on the WHO website and through your national and local public health authority. Most people who become infected experience mild illness and recover, but it can be more severe for others. Take care of your health and protect others by doing the following",
+        "CT2" : "Why is it recommended to avoid close contact with anyone who has fever and cough?",
+        "D2" : "There are several ways you can protect yourself from the new coronavirus.  one of the recommended measures is to avoid close contact with anyone who has fever and cough. Watch this short video to learn more about it",
+        "CT3" : "How is the new coronavirus affecting people who get it?",
+        "D3" : "As with other respiratory illnesses, infections with 2019-nCoV can cause mild symptoms including runny nose, sore throat, cough and fever. It can be more severe for some persons ,and more rarely, it can be fatal. Watch this short video to find out more.",
+        "CT4" : "Basic protective measures against the new coronavirus",
+        "D4" : " As with other respiratory illnesses, infections with 2019-nCoV can cause mild symptoms including runny nose, sore throat, cough and fever. It can be more severe for some persons ,and more rarely, it can be fatal. Watch this short video to find out more."
+    }, 
+    "GAMES" : {
+        "title" : "Games" , 
+        "h2" : "Match all cards to win!",
+        "p" : "You have a total of ", 
+        "pend" : "tries" ,
+        "h4" : "Start in ",
+        "h22" : "Match all cards to win!",
+        "pp" : "You have",
+        "ppend" : "tries...",
+        "ppp": "You have" , 
+        "pppend" : "this one!" , 
+        "pppp" : "Would you like to play again?", 
+        "button" : "Play Again",
+        "ppppp" : "You have", 
+        "pppppmid" : "LOSE" , 
+        "pppppend" : "You have" , 
+        "pppppp" : "Would you like to try again?" , 
+        "button2" : "Try Again"
+    }
+    ,
+    "SUGGESTIONS" : {
+        "title" : " Best Suggestions", 
+        "1" : "Those who love music , From here you hear every radio in the world", 
+        "2" : "Those who love museums, 14 museums, the Virtual Tours staff", 
+        "3" : "To those who love space ... NASA has set the library free for every blush", 
+        "4" : "Those who like to read a lot books are free here", 
+        "5" : "Those who love movies and series ... watch the month of Blash", 
+        "6" : "Those who love learn a new need, Harvard University, working as co-counsel in various fields", 
+        "7" : "Anyone who loves to learn English for free", 
+        "8" : "Follow Mecca directly", 
+        "9" : "The latest statistics on the spread of the virus up to this point"
+    }
+    , 
+    "TEST YOURSELF" : {
+        "title" : "Test Yourself",
+        "y" : "YES",
+        "n" : "NO",
+        "button" : "Confirm & Pass to next question" ,
+        "p" : "You have",
+        "pend" : "score",
+        "c1" : "Your condition does not seem to be of concern." ,
+        "c2" : "You need to call a doctor now.",
+        "repeat" : "Repeat test" 
+    },
+    "QUIZ" : {
+        "title" : "Quiz" , 
+        "f" : "Are you Safe" , 
+        "y" : "YES" , 
+        "n" : "NO" , 
+        "button" : "Next Question", 
+        "p" : "Thank you, you can have more information in our", 
+        "pend" :"Health section",
+        "repeat" : "Repeat test"
+    } 
+
+}

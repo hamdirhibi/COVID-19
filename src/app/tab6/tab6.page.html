@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-title>
-      Games
+		{{"GAMES.title" | translate }}
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -11,15 +11,15 @@
 	<!-- Show loading screen -->
 	<div align="center" *ngIf="!startGame">
 		<br>
-		<h2>Match all cards to win!</h2>
-		<p>You have a total of <b>{{userLife}}</b> tries.</p>
+		<h2>{{"GAMES.h2" | translate }}</h2>
+		<p>{{"GAMES.p" | translate }} <b>{{userLife}}</b> {{"GAMES.pend" | translate }}</p>
 		<br>
-		<h4>Start in <span style="color:#CC0000;font-size:24px;">{{countDown}}</span>...</h4>
+		<h4>{{"GAMES.h4" | translate }} <span style="color:#CC0000;font-size:24px;">{{countDown}}</span>...</h4>
 	</div>
 
 	<!-- Actual cards display -->
 	<div align="center" *ngIf="startGame && gameState == 'init'">
-		<h2>Match all cards to win!</h2>
+		<h2>{{"GAMES.h22" | translate }}</h2>
 		<ion-row align-items-center text-center size="8">
 
 			<ion-col align-self-center size="3" *ngFor="let c of cardsArray; let i = index">
@@ -40,7 +40,7 @@
 		<br>
 		<ion-row>
 			<ion-col col-9>
-				<p>You have <span style="color:#00CC00; font-size: 24px;">{{userLife}}</span> tries...</p>
+				<p>{{"GAMES.pp" | translate }} <span style="color:#00CC00; font-size: 24px;">{{userLife}}</span> {{"GAMES.ppend" | translate }}</p>
 			</ion-col>
 			<ion-col>
 				<p><span style="color:#CC0000; font-size: 24px;">{{shownTime}}</span></p>
@@ -51,24 +51,24 @@
 	<!-- Show Win screen -->
 	<div *ngIf="gameState =='win'" align="center">
 		<br>
-		<p>You have <span style="color:#00CC00; font-size: 24px;">WON</span> this one!</p>
-		<p>Would you like to play again?</p>
+		<p>{{"GAMES.ppp" | translate }} <span style="color:#00CC00; font-size: 24px;">WON</span> {{"GAMES.pppend" | translate }} !</p>
+		<p>{{"GAMES.pppp" | translate }}</p>
 		<br>
 		<ion-button size="large" color="danger" (click)="restartGame()">
 			<ion-icon name="repeat"></ion-icon>
-			&nbsp; &nbsp; Play Again
+			&nbsp; &nbsp; {{"GAMES.button" | translate }}
 		</ion-button>
 	</div>
 
 	<!-- Show Lose screen -->
 	<div *ngIf="gameState == 'lose'" align="center">
 		<br>
-		<p>You have <span style="color:#CC0000; font-size: 24px;">LOST</span> this one!</p>
-		<p>Would you like to try again?</p>
+		<p>{{"GAMES.ppppp" | translate }} <span style="color:#CC0000; font-size: 24px;">{{"GAMES.pppppmid" | translate }}</span> {{"GAMES.pppppend" | translate }}</p>
+		<p>{{"GAMES.pppppp" | translate }}</p>
 		<br>
 		<ion-button size="large" color="danger" (click)="restartGame()">
 			<ion-icon name="repeat"></ion-icon>
-			&nbsp; &nbsp; Try Again
+			&nbsp; &nbsp; {{"GAMES.button2" | translate }}
 		</ion-button>
 	</div>
 
