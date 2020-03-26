@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ApplicationRef } from '@angular/core';
 
 @Component({
   selector: 'app-quiz',
@@ -38,7 +38,36 @@ messages=[
   "If you have fever, cough and difficulty breathing, seek medical care as soon as possible. Stay home if you feel unwell. If you have a fever, cough and difficulty breathing, seek medical attention and call in advance. Follow the directions of your local health authority.National and local authorities will have the most up to date information on the situation in your area. Calling in advance will allow your health care provider to quickly direct you to the right health facility. This will also protect you and help prevent spread of viruses and other infections."
 ]
 
-  ngOnInit() {
-  }
+statusYes =[false,false,false,false,false];
+statusNo = [false,false,false,false,false];
+
+ngOnInit() {
+  this.restart();
+}
+
+restart(){
+  this.statusYes =[false,false,false,false,false];
+  this.statusNo = [false,false,false,false,false];
+  this.index=0;
+
+}
+  choose(value){
+    if(value === 'Yes')
+       {   
+         this.statusYes[this.index] = true ; 
+         this.statusNo[this.index] = false; 
+       } else{
+         this.statusYes[this.index] = false ; 
+         this.statusNo[this.index] = true; 
+         
+       }
+
+ } 
+
+ next(){
+   this.index++;
+   alert(this.index);
+}
+
 
 }

@@ -10,7 +10,7 @@
 <ion-content >
   
   
-  <div *ngIf="score === 0" class="login-form">  
+  <div *ngIf="index < 6" class="login-form">  
     <ion-button  color="tertiary" [disabled]="index === 0" (click)="return()"><ion-icon name="arrow-back"></ion-icon></ion-button>
     <h3 text-center>
       <strong>{{questions[index]}}</strong>
@@ -45,7 +45,7 @@
   </div>
 
 
-  <div *ngIf="score > 0" align="center">
+  <div *ngIf="index === 6" align="center">
 		<br>
 		<p >You have <span  style="color:#00CC00; font-size: 24px;">{{score}} </span>score</p>
 		<p *ngIf="score < 4">Your condition does not seem to be of concern.</p>

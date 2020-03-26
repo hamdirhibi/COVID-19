@@ -10,15 +10,50 @@
       <strong>{{questions[index]}}</strong>
     </h3>
     <ion-list lines="none">
+      <ion-radio-group>
      
-      <ion-item>
-        <ion-label>Yes</ion-label>
-      </ion-item>
+        <ion-item>
+          <ion-label>Yes</ion-label>
+          <ion-radio name="resp"
+          (click)="choose('Yes')" [checked]="statusYes[index]"></ion-radio>
+  
+        </ion-item>
+  
+        <ion-item>
+          <ion-label>No</ion-label>
+          <ion-radio name="resp"
+          (click)="choose('No')"  [checked]="statusNo[index]"></ion-radio>
+  
+       
+        </ion-item>
+       </ion-radio-group> 
     </ion-list>
 
-    <ion-button mode="ios" (click)="next()" color="tertiary" expand="block"  >
-      Confirm & Pass to next question
+    <div>
+         <h2 *ngIf="index % 2 == 0 && statusYes[index]" style="color:green">{{responseYes[index]}}</h2>
+         <h2 *ngIf="index % 2 != 0  && statusYes[index]"  style="color:red">{{responseYes[index]}}</h2>
+         <h2 *ngIf="index % 2 == 0 && statusNo[index]" style="color:red">{{responseNo[index]}}</h2>
+         <h2 *ngIf="index % 2 != 0  && statusNo[index]"  style="color:green">{{responseNo[index]}}</h2>
+        
+         <p *ngIf="statusYes[index] || statusNo[index]">
+           {{messages[index]}}
+         </p>
+    </div>
+
+    <ion-button *ngIf="statusYes[index] || statusNo[index]" mode="ios" (click)="next()" color="tertiary" expand="block"  >
+      Next Question <ion-icon name="arrow-dropright"></ion-icon>
     </ion-button>
+
+    <div *ngIf="index === 5" align="center">
+      <br>
+      <p >See more <span  style="color:#00CC00; font-size: 24px;">here</span></p>
+    
+      <br>
+      <ion-button size="large" color="tertiary" (click)="restart()">
+        <ion-icon name="repeat"></ion-icon>
+        &nbsp; &nbsp; Repeat test
+      </ion-button>
+    </div>
 </div>  
   
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-testcovid',
@@ -67,7 +68,7 @@ export class TestcovidPage implements OnInit {
   calculScore(){
     for(let i=0 ; i < 6;i++ )
     {
-      this.score =  this.statusYes[i] ? this.score +1  : 0 ;
+      this.score =  this.statusYes[i] ? this.score + this.scores[i]  : 0 ;
     }
 
 
