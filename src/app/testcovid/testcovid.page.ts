@@ -17,7 +17,8 @@ export class TestcovidPage implements OnInit {
   score=0;
   
   alert= ""; 
-  questions = ['Have you come into close contact with someone who has a laboratory confirmed COVID – 19 diagnosis? ', 
+  questions = [
+    'Have you come into close contact with someone who has a laboratory confirmed COVID – 19 diagnosis? ', 
     'Do you have a fever ?' , 
     'In the past few days, do you have a cough or increase in your usual cough?' ,
     'Do you have a sore throat these past few days?' ,
