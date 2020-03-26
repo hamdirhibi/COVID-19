@@ -45,7 +45,7 @@ export class AppComponent {
         icon  : "chatboxes"
       },
       {
-        title : "Health",
+        title : "Best Practices",
         url   : "/tabs/tabs/tab5",
         icon  : "heart"
       },
@@ -60,7 +60,7 @@ export class AppComponent {
         icon  : "logo-playstation"
       },
       {
-        title : "E-Learning",
+        title : "Suggestions",
         url   : "/tabs/tabs/tab7",
         icon  : "book"
       },
