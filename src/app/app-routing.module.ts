@@ -3,7 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { NewsPage } from './news/news.page';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'signup', pathMatch: 'full' },
+  { path: '', redirectTo: 'welcomepage', pathMatch: 'full' },
   { path: 'tabs', loadChildren: './tabs/tabs.module#TabsPageModule' },
   { path: 'signup', loadChildren: './signup/signup.module#SignupPageModule' },
   { path: 'enter-code', loadChildren: './enter-code/enter-code.module#EnterCodePageModule' },
@@ -13,6 +13,7 @@ const routes: Routes = [
   { path: 'tab7', loadChildren: './tab7/tab7.module#Tab7PageModule' },
   { path: 'testcovid', loadChildren: './testcovid/testcovid.module#TestcovidPageModule' },
   { path: 'quiz', loadChildren: './quiz/quiz.module#QuizPageModule' },
+  { path: 'welcomepage', loadChildren: './welcomepage/welcomepage.module#WelcomepagePageModule' },
 ];
 @NgModule({
   imports: [
