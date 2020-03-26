@@ -12,7 +12,7 @@ export class WelcomepagePage implements OnInit {
 
   async ngOnInit() {
     await this.sleep(3000);
-          this.router.navigate(['/signup']); 
+          this.router.navigate(['/tabs/tabs/tab1']); 
 
     }
     sleep(ms) {
