@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-conversation',
@@ -6,13 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./conversation.page.scss'],
 })
 export class ConversationPage implements OnInit {
-
+  @ViewChild('scrollframe') scrollFrame: ElementRef;
+   scrollContainer: any;
    contactInfo: any = {
-    name: 'JOHN DOE',
+    name: 'Amal',
     status: 'ONLINE'
   }
-   showOptions: boolean = false;
-   messages: Array<any> = [
+  message : String =""; 
+  showOptions: boolean = false;
+  messages: Array<any> = [
     { text: "Hey what's up?", type: 'received', created: '14:02' },
     { text: "Nothing", type: 'send', created: '14:05' },
     { text: "Want to go to the movies?", type: 'send', created: '14:05' },
@@ -22,16 +24,35 @@ export class ConversationPage implements OnInit {
     { text: "Nothing", type: 'send', created: '14:05' },
     { text: "Nothing", type: 'send', created: '14:05' },
     { text: "Nothing", type: 'send', created: '14:05' },
+    { text: "Nothing", type: 'send', created: '14:05' },
+    { text: "Nothing", type: 'send', created: '14:05' },
+    { text: "Nothing", type: 'send', created: '14:05' },
+    { text: "Nothing", type: 'send', created: '14:05' },
+    { text: "Nothing", type: 'send', created: '14:05' },
+    { text: "Nothing", type: 'send', created: '14:05' },
+    { text: "Nothing", type: 'send', created: '14:05' },
+    { text: "Nothing", type: 'send', created: '14:05' },
+
     { text: "I'm sorry, I can't", type: 'received', created: '14:15' },
     { text: "but can we go tomorrow?", type: 'received', created: '14:16' },
   ];
 
-
+  container: HTMLElement;          
   constructor() { }
 
   ngOnInit() {
+      this.ngAfterViewInit();
   }
+  ngAfterViewInit() {
 
+      this.container = document.getElementById("scrollframe");           
+      this.container.scrollTop = this.container.scrollHeight;     
+
+    } 
+  
+    // this.scrollContainer = this.scrollFrame.nativeElement;  
+  //  this.scrollToBottom() ; 
+  
   showOptionsToggle(value?: boolean) {
     if (value !== undefined) {
       this.showOptions = value;
@@ -39,5 +60,25 @@ export class ConversationPage implements OnInit {
     }
     this.showOptions = !this.showOptions;
   }
+  send(){
+    if (this.message.length>0)
+    this.messages.push(
+       {
+          text: this.message, type: 'send', created: new Date().toDateString() 
+       }); 
+       this.ngAfterViewInit();
 
+    this.message ="";
+    //window.scrollTo(0,this.scrollContainer.scrollHeight);
+        this.ngAfterViewInit();
+  }
+
+  private scrollToBottom(): void {
+    this.scrollContainer.scroll({
+      top: this.scrollContainer.scrollHeight,
+      left: 0,
+      bottom : 0 , 
+      behavior: 'smooth'
+    });
+  }
 }

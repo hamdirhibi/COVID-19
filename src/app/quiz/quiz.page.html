@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>quiz</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="index < 5" class="login-form">  
+    <h3 text-center>
+      <strong>{{questions[index]}}</strong>
+    </h3>
+    <ion-list lines="none">
+     
+      <ion-item>
+        <ion-label>Yes</ion-label>
+      </ion-item>
+    </ion-list>
+
+    <ion-button mode="ios" (click)="next()" color="tertiary" expand="block"  >
+      Confirm & Pass to next question
+    </ion-button>
+</div>  
+  
+
+</ion-content>

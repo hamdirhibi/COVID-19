@@ -61,7 +61,25 @@ const routes: Routes = [
           }
         ]
       },
-      
+
+      {
+        path: 'tab7',
+        children: [
+          {
+            path: '',
+            loadChildren: '../tab7/tab7.module#Tab7PageModule'
+          }
+        ]
+      },
+      {
+        path: 'testcovid',
+        children:[
+          {
+            path:'',
+            loadChildren: '../testcovid/testcovid.module#TestcovidPageModule'
+          }
+        ]
+      },
       {
         path: '',
         redirectTo: '/tabs/tabs/tab1',
