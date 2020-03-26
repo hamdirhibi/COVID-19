@@ -68,7 +68,7 @@ export class TestcovidPage implements OnInit {
   calculScore(){
     for(let i=0 ; i < 6;i++ )
     {
-      this.score =  this.statusYes[i] ? this.score + this.scores[i]  : 0 ;
+      this.score =  this.statusYes[i] ? this.score + this.scores[i]  : this.score  ;
     }
 
 
