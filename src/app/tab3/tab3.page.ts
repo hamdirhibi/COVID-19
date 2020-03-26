@@ -8,5 +8,11 @@ import { Component } from '@angular/core';
 export class Tab3Page {
 
   constructor() {}
+  playAudio(){
+    let audio = new Audio();
+    audio.src = ".../../assets/son.mp3";
+    audio.load();
+    audio.play();
+  }
 
 }

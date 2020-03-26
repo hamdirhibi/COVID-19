@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
-
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
@@ -22,5 +21,5 @@ export class Tab2Page {
   private showConversationPage() {
     this.navCtrl.navigateForward('conversation')
   }
-
+  
 }
