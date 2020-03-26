@@ -66,12 +66,12 @@ export class AppComponent {
       },
       {
         title: "Test Yourself", 
-        url: "/testcovid/tabs/testcovid",
+        url: "/tabs/tabs/testcovid",
         icon: "help-buoy"
       },
       {
         title: 'Are You Safe?',
-        url: "/quiz/tabs/quiz",
+        url: "/tabs/tabs/quiz",
         icon: "help"
       }
     ]
