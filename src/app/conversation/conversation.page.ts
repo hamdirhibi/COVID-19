@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-
+import {ConversationService} from '../conversation.service';
+import { analyzeAndValidateNgModules } from '@angular/compiler';
 @Component({
   selector: 'app-conversation',
   templateUrl: './conversation.page.html',
@@ -15,37 +16,24 @@ export class ConversationPage implements OnInit {
   message : String =""; 
   showOptions: boolean = false;
   messages: Array<any> = [
-    { text: "Hey what's up?", type: 'received', created: '14:02' },
-    { text: "Nothing", type: 'send', created: '14:05' },
-    { text: "Want to go to the movies?", type: 'send', created: '14:05' },
-    { text: "I'm sorry, I can't", type: 'received', created: '14:15' },
-    { text: "but can we go tomorrow?", type: 'received', created: '14:16' },
-    { text: "Nothing", type: 'send', created: '14:05' },
-    { text: "Nothing", type: 'send', created: '14:05' },
-    { text: "Nothing", type: 'send', created: '14:05' },
-    { text: "Nothing", type: 'send', created: '14:05' },
-    { text: "Nothing", type: 'send', created: '14:05' },
-    { text: "Nothing", type: 'send', created: '14:05' },
-    { text: "Nothing", type: 'send', created: '14:05' },
-    { text: "Nothing", type: 'send', created: '14:05' },
-    { text: "Nothing", type: 'send', created: '14:05' },
-    { text: "Nothing", type: 'send', created: '14:05' },
-    { text: "Nothing", type: 'send', created: '14:05' },
-    { text: "Nothing", type: 'send', created: '14:05' },
-
-    { text: "I'm sorry, I can't", type: 'received', created: '14:15' },
-    { text: "but can we go tomorrow?", type: 'received', created: '14:16' },
+    { text: "Hello there!😊", type: 'received', created: '14:02' },
+    { text: "Welcome to CovidAssist", type: 'received', created: '14:02' },
+    { text: "I'm here to help you, ask me what you want about COVID-19!", type: 'received', created: '14:05' },
+    
   ];
 
   container: HTMLElement;          
-  constructor() { }
+  constructor(
+    private conversationService:ConversationService
+    )
+     { }
 
   ngOnInit() {
       this.ngAfterViewInit();
   }
   ngAfterViewInit() {
 
-      this.container = document.getElementById("scrollframe");           
+      this.container = document.getElementById("scrollframe") as HTMLElement ;           
       this.container.scrollTop = this.container.scrollHeight;     
 
     } 
@@ -67,10 +55,17 @@ export class ConversationPage implements OnInit {
           text: this.message, type: 'send', created: new Date().toDateString() 
        }); 
        this.ngAfterViewInit();
-
-    this.message ="";
-    //window.scrollTo(0,this.scrollContainer.scrollHeight);
-        this.ngAfterViewInit();
+        const messageToSend = this.message; 
+        this.message="";
+         
+       //window.scrollTo(0,this.scrollContainer.scrollHeight);
+      this.ngAfterViewInit();
+      this.conversationService
+      .getMessage(messageToSend)
+      .subscribe(data => { 
+         this.messages.push({
+          text: data.response , type:'received' 
+        })      })
   }
 
   private scrollToBottom(): void {

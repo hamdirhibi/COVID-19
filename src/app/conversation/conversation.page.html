@@ -15,12 +15,12 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="bg">
+<ion-content class="bg" id="chat">
 
   <div id="scrollframe"class="chat-container" >
     <div   *ngFor="let message of messages" class="chat-bubble" [(ngClass)]="message.type">
       <h6>{{ message.text }}</h6>
-      <p>{{ message.created }}</p>
+  
     </div>
   </div>
 
