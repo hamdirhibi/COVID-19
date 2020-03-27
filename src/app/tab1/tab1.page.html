@@ -1,11 +1,48 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>
-      {{"CONVERSATION.title" | translate }}
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+    
+      <!-- -->
+      <ion-list-header>
+      <ion-title style="color:white">{{"CONVERSATION.title" | translate }}</ion-title> 
+      <ion-item style="margin-right: 10px;">
+        <ion-label>{{"CONVERSATION.chose" | translate }}</ion-label>
+        <ionic-selectable
+          item-content 
+          [(ngModel)]="port"
+          [items]="ports"
+          itemValueField="id"
+          itemTextField="name"
+          [canSearch]="true"
+          (onChange)="portChange($event)">
+          <ng-template ionicSelectableItemEndTemplate let-port="item" let-isPortSelected="isItemSelected">
+            <img class="country-flag" [src]="port.src" width="30" height="20" />
+          </ng-template>
+        </ionic-selectable>
+      </ion-item>
+      <!-- <ion-button (click)="presentModal()">{{"CONVERSATION.chose" | translate }}</ion-button>  -->
+    
+        <!-- <ion-label style="color: white ; text-decoration: wavy ; text-decoration-style: solid;">{{"CONVERSATION.chose" | translate }}</ion-label> -->
+               <!-- <ion-select style="color: white" [(ngModel)]="lang">
+                   <ion-select-option  value="en"><img src="../../assets/img/en.jpg" >    {{"ENGLISH" | translate}}</ion-select-option>
+                   <ion-select-option  value="fr"> <img src="../../assets/img/fr.png" size="15px"> {{"FRENCH" | translate}}</ion-select-option>
+                   <ion-select-option  value="ar"><img src="../../assets/img/uae.png" size="15px"> {{"ARAB" | translate}}</ion-select-option>
+               </ion-select> -->
+      
+      
+      <!-- 
+      <ion-select value="brown" okText="Okay" cancelText="Dismiss">
+      <ion-select-option value="brown">Brown</ion-select-option>
+      <ion-select-option value="blonde">Blonde</ion-select-option>
+      <ion-select-option value="black">Black</ion-select-option>
+      <ion-select-option value="red">Red</ion-select-option>
+      </ion-select> -->
+      </ion-list-header>
 
+
+   
+
+    </ion-toolbar>
+  </ion-header>
 <ion-content class="bg">
   
   <ion-list lines="none" class="app-list">

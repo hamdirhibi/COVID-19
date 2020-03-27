@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Router } from '@angular/router';
 import { NewsService } from '../news.service';
+import { LanguageService } from '../services/language.service';
+import { TranslateService } from '@ngx-translate/core';
 
 const API_URL = environment.apiUrl;
 const API_KEY = environment.apiKey;
@@ -16,19 +18,35 @@ export class Tab4page implements OnInit {
   article;
   data: any;
   page = 1;
+  lang: string ;
 
   constructor(
     private router: Router,
     //private http: HttpClient,
-    private newsService: NewsService
+    private newsService: NewsService , 
+    private languageService : LanguageService,
+    private translate: TranslateService , 
+    private languageServie : LanguageService 
+    ) {
 
-    ) { }
+
+   
+     }
 
   ngOnInit() {
+    this.lang = this.languageService.selected ;  
+    if(this.lang !== 'ar'&&this.lang!=='fr') 
+        this.lang = 'en';
+    console.log(this.lang);
 
+
+    let lg   ; 
+    if (this.lang=='en') lg = 'us'; 
+    if (this.lang=='ar') lg = 'ae'; 
+    
     this.newsService
     .getData(
-      `top-headlines?country=us&category=business&pageSize=5&page=${
+      `top-headlines?country=${lg}&category=business&pageSize=5&page=${
         this.page
       }`
     )
@@ -43,9 +61,13 @@ export class Tab4page implements OnInit {
   loadMoreNews(event) {
     this.page++;
     console.log(event);
+    let lg   ; 
+    if (this.lang=='en') lg = 'us'; 
+    if (this.lang=='ar') lg = 'ae'; 
+
     this.newsService
       .getData(
-        `top-headlines?country=us&category=business&pageSize=5&page=${
+        `top-headlines?country=${lg}&category=business&pageSize=5&page=${
           this.page
         }`
       )

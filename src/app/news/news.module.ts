@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { NewsPage } from './news.page';
 import { NewsService } from '../news.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 const routes: Routes = [
   {
@@ -20,6 +21,9 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
+    TranslateModule.forChild(), 
+
+
     RouterModule.forChild(routes)
 
   ],

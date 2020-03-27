@@ -1,7 +1,8 @@
 {
     "CONVERSATION" : {
         "title" : "Conversation",
-        "CLICK" : "Click here to chat"
+        "CLICK" : "Click here to chat",
+        "chose" : "Select Language"
 
     }, 
     "CONTACTS" : {
@@ -104,6 +105,9 @@
         "5M":  "If you have fever, cough and difficulty breathing, seek medical care as soon as possible. Stay home if you feel unwell. If you have a fever, cough and difficulty breathing, seek medical attention and call in advance. Follow the directions of your local health authority.National and local authorities will have the most up to date information on the situation in your area. Calling in advance will allow your health care provider to quickly direct you to the right health facility. This will also protect you and help prevent spread of viruses and other infections."
 
         } ,
-    "STEP": "continue"
+    "STEP": "continue",
+    "ARAB" : "Arabic"
+    ,"ENGLISH" : "English" , 
+    "FRENCH" : "French"
 
 }

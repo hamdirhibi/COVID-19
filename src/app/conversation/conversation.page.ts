@@ -65,7 +65,9 @@ export class ConversationPage implements OnInit {
       .subscribe(data => { 
          this.messages.push({
           text: data.response , type:'received' 
-        })      })
+        })     
+       })
+       this.ngAfterViewInit() ; 
   }
 
   private scrollToBottom(): void {

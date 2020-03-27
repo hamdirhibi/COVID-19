@@ -4,7 +4,7 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>    <ion-title>
-      News
+      {{ "NEWS.title" | translate}}
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,8 +14,8 @@
     <ion-img [src]="urlToImage"></ion-img>
     <ion-card-content>
       <ion-card-title>{{title}}</ion-card-title>
-      <strong>{{author}}</strong>
-      <div>
+      <strong *ngIf="author!='null'">{{author}}</strong>
+      <div *ngIf="content!='null'"> 
         {{content}}
       </div>
     </ion-card-content>
