@@ -20,7 +20,6 @@
         "D3" : "Comme pour les autres maladies respiratoires, les infections à 2019-nCoV peuvent provoquer des symptômes bénins, notamment le nez qui coule, des maux de gorge, de la toux et de la fièvre. Elle peut être plus grave pour certaines personnes et, plus rarement, elle peut être fatale. Regardez cette courte vidéo pour en savoir plus.",
         "CT4" : "Mesures de protection de base contre le nouveau coronavirus",
         "D4" : " Comme pour les autres maladies respiratoires, les infections à 2019-nCoV peuvent provoquer des symptômes bénins, notamment le nez qui coule, des maux de gorge, de la toux et de la fièvre. Elle peut être plus grave pour certaines personnes et, plus rarement, elle peut être fatale. Regardez cette courte vidéo pour en savoir plus."
-
     },
     "GAMES" : {
         "title" : "Games" , 
@@ -75,7 +74,8 @@
         "p" : "Merci, vous pouvez avoir plus d'informations dans notre", 
         "pend" :"Section santé",
         "repeat" : "Répéter le test"
-    } 
+    } ,
+    "STEP" : "Continué"
     
 
 }

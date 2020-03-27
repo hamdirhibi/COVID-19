@@ -34,6 +34,7 @@
     "cordova-plugin-video-player": "git+https://github.com/moust/cordova-plugin-videoplayer.git",
     "cordova-plugin-youtube-video-player": "^2.4.0",
     "core-js": "^2.6.11",
+    "gl-ionic-background-video": "0.0.5",
     "ionic4-rating": "^1.0.9",
     "jquery": "^3.4.1",
     "rxjs": "^6.5.4",

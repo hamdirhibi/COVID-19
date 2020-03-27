@@ -74,6 +74,7 @@
         "p" : "Thank you, you can have more information in our", 
         "pend" :"Health section",
         "repeat" : "Repeat test"
-    } 
+    } ,
+    "STEP": "continue"
 
 }
