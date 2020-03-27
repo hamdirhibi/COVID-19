@@ -31,7 +31,7 @@ export class Tab1Page {
     private navCtrl: NavController
   ) {}
 
-  private showConversationPage ()
+   showConversationPage ()
   {
     this.navCtrl.navigateForward('conversation')
   }
