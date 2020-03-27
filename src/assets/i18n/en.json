@@ -63,7 +63,14 @@
         "pend" : "score",
         "c1" : "Your condition does not seem to be of concern." ,
         "c2" : "You need to call a doctor now.",
-        "repeat" : "Repeat test" 
+        "repeat" : "Repeat test" ,
+         "1" : "Have you come into close contact with someone who has a laboratory confirmed COVID – 19 diagnosis?",
+         "2" : "Do you have a fever ?",
+         "3" : "In the past few days, do you have a cough or increase in your usual cough?",
+         "4" : "Do you have a sore throat these past few days?",
+         "5" : "In the past 24 hours, have you had diarrhea?"  , 
+         "6" :  "Do you have  symptoms of lower respiratory illness such as  shortness of breath or difficulty breathing?",
+         "error" : "You need to select Yes or No"
     },
     "QUIZ" : {
         "title" : "Quiz" , 

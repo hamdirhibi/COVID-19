@@ -1,81 +1,81 @@
 {
-    "CONVERSATION" : {
-        "title" : "Conversation"
-
-    }, 
-    "CONTACTS" : {
-        "title" : "Contact"
-    } , 
-    "NEWS" : {
-        "title" : "Actualité"
-
+    "CONVERSATION": {
+        "title": "Conversation"
     },
-    "BEST PRACTICES" : {
-        "title" : "Les meilleures pratiques",
-        "CT1" : "Mesures de protection de base contre le nouveau coronavirus",
-        "D1" : "Restez au courant des dernières informations sur l'épidémie de COVID-19, disponibles sur le site Web de l'OMS et par le biais de votre autorité nationale et locale de santé publique. La plupart des personnes infectées connaissent une maladie bénigne et se rétablissent, mais cela peut être plus grave pour les autres. Prenez soin de votre santé et protégez les autres en procédant comme suit",
-        "CT2" : "Pourquoi est-il recommandé d'éviter tout contact étroit avec toute personne qui a de la fièvre et de la toux?",
-        "D2" : "Il existe plusieurs façons de vous protéger contre le nouveau coronavirus. l'une des mesures recommandées est d'éviter tout contact étroit avec toute personne qui a de la fièvre et de la toux. Regardez cette courte vidéo pour en savoir plus",
-        "CT3" : "Comment le nouveau coronavirus affecte-t-il les personnes qui le contractent?",
-        "D3" : "Comme pour les autres maladies respiratoires, les infections à 2019-nCoV peuvent provoquer des symptômes bénins, notamment le nez qui coule, des maux de gorge, de la toux et de la fièvre. Elle peut être plus grave pour certaines personnes et, plus rarement, elle peut être fatale. Regardez cette courte vidéo pour en savoir plus.",
-        "CT4" : "Mesures de protection de base contre le nouveau coronavirus",
-        "D4" : " Comme pour les autres maladies respiratoires, les infections à 2019-nCoV peuvent provoquer des symptômes bénins, notamment le nez qui coule, des maux de gorge, de la toux et de la fièvre. Elle peut être plus grave pour certaines personnes et, plus rarement, elle peut être fatale. Regardez cette courte vidéo pour en savoir plus."
-
+    "CONTACTS": {
+        "title": "Contact"
     },
-    "GAMES" : {
-        "title" : "Games" , 
-        "h2" : "Match all cards to win!",
-        "p" : "You have a total of ", 
-        "pend" : "tries" ,
-        "h4" : "Start in ",
-        "h22" : "Match all cards to win!",
-        "pp" : "You have",
-        "ppend" : "tries...",
-        "ppp": "You have" , 
-        "pppend" : "this one!" , 
-        "pppp" : "Would you like to play again?", 
-        "button" : "Play Again",
-        "ppppp" : "You have", 
-        "pppppmid" : "LOSE" , 
-        "pppppend" : "You have" , 
-        "pppppp" : "Would you like to try again?" , 
-        "button2" : "Try Again"
+    "NEWS": {
+        "title": "Actualité"
+    },
+    "BEST PRACTICES": {
+        "title": "Les meilleures pratiques",
+        "CT1": "Mesures de protection de base contre le nouveau coronavirus",
+        "D1": "Restez au courant des dernières informations sur l'épidémie de COVID-19, disponibles sur le site Web de l'OMS et par le biais de votre autorité nationale et locale de santé publique. La plupart des personnes infectées connaissent une maladie bénigne et se rétablissent, mais cela peut être plus grave pour les autres. Prenez soin de votre santé et protégez les autres en procédant comme suit",
+        "CT2": "Pourquoi est-il recommandé d'éviter tout contact étroit avec toute personne qui a de la fièvre et de la toux?",
+        "D2": "Il existe plusieurs façons de vous protéger contre le nouveau coronavirus. l'une des mesures recommandées est d'éviter tout contact étroit avec toute personne qui a de la fièvre et de la toux. Regardez cette courte vidéo pour en savoir plus",
+        "CT3": "Comment le nouveau coronavirus affecte-t-il les personnes qui le contractent?",
+        "D3": "Comme pour les autres maladies respiratoires, les infections à 2019-nCoV peuvent provoquer des symptômes bénins, notamment le nez qui coule, des maux de gorge, de la toux et de la fièvre. Elle peut être plus grave pour certaines personnes et, plus rarement, elle peut être fatale. Regardez cette courte vidéo pour en savoir plus.",
+        "CT4": "Mesures de protection de base contre le nouveau coronavirus",
+        "D4": " Comme pour les autres maladies respiratoires, les infections à 2019-nCoV peuvent provoquer des symptômes bénins, notamment le nez qui coule, des maux de gorge, de la toux et de la fièvre. Elle peut être plus grave pour certaines personnes et, plus rarement, elle peut être fatale. Regardez cette courte vidéo pour en savoir plus."
+    },
+    "GAMES": {
+        "title": "Games",
+        "h2": "Match all cards to win!",
+        "p": "You have a total of ",
+        "pend": "tries",
+        "h4": "Start in ",
+        "h22": "Match all cards to win!",
+        "pp": "You have",
+        "ppend": "tries...",
+        "ppp": "You have",
+        "pppend": "this one!",
+        "pppp": "Would you like to play again?",
+        "button": "Play Again",
+        "ppppp": "You have",
+        "pppppmid": "LOSE",
+        "pppppend": "You have",
+        "pppppp": "Would you like to try again?",
+        "button2": "Try Again"
+    },
+    "SUGGESTIONS": {
+        "title": " Meilleures suggestions",
+        "1": "Ceux qui aiment la musique, d'ici vous entendez toutes les radios du monde",
+        "2": "Ceux qui aiment les musées, 14 musées, le personnel des visites virtuelles",
+        "3": "Pour ceux qui aiment l'espace ... la NASA a rendu la bibliothèque gratuite pour chaque rougeur",
+        "4": "Ceux qui aiment lire beaucoup de livres sont gratuits ici",
+        "5": "Ceux qui aiment les films et les séries ... regardez le mois de Blash",
+        "6": "Ceux qui aiment apprendre un nouveau besoin, Harvard University, travaillent en tant que co-conseil dans divers domaines",
+        "7": "Quiconque aime apprendre l'anglais gratuitement",
+        "8": "Suivez la Mecque directement",
+        "9": "Les dernières statistiques sur la propagation du virus à ce jour"
+    },
+    "TEST YOURSELF": {
+        "title": "Testez-vous",
+        "y": "OUI",
+        "n": "NON",
+        "button": "Confirmer et passer à la question suivante",
+        "p": "Vous avez",
+        "pend": "score",
+        "c1": "Vous Votre état ne semble pas vous préoccuper",
+        "c2": "Vous devez appeler un médecin maintenant..",
+        "repeat": "Répéter le test",
+        "1": "Avez-vous été en contact étroit avec une personne dont le diagnostic de COVID-19 a été confirmé en laboratoire?",
+        "2": "As-tu de la fièvre ?",
+        "3": "Ces derniers jours,Avez-vous une toux ou une augmentation de votre toux habituelle ? ",
+        "4": "Avez-vous mal à la gorge ces derniers jours?",
+        "5": "Au cours des dernières 24 heures, avez-vous eu de la diarrhée?",
+        "6": "Avez-vous des symptômes de maladie des voies respiratoires inférieures comme un essoufflement ou des difficultés à respirer?",
+        "error": "Vous devez répondre par Oui ou Non" 
+    },
+    "QUIZ": {
+        "title": "Quiz",
+        "f": "Es-tu en sécurité",
+        "y": "YES",
+        "n": "NON",
+        "button": "Question suivante",
+        "p": "Merci, vous pouvez avoir plus d'informations dans notre",
+        "pend": "Section santé",
+        "repeat": "Répéter le test"
     }
-    ,
-    "SUGGESTIONS" : {
-        "title" : " Meilleures suggestions", 
-        "1" : "Ceux qui aiment la musique, d'ici vous entendez toutes les radios du monde", 
-        "2" : "Ceux qui aiment les musées, 14 musées, le personnel des visites virtuelles", 
-        "3" : "Pour ceux qui aiment l'espace ... la NASA a rendu la bibliothèque gratuite pour chaque rougeur", 
-        "4" : "Ceux qui aiment lire beaucoup de livres sont gratuits ici", 
-        "5" : "Ceux qui aiment les films et les séries ... regardez le mois de Blash", 
-        "6" : "Ceux qui aiment apprendre un nouveau besoin, Harvard University, travaillent en tant que co-conseil dans divers domaines", 
-        "7" : "Quiconque aime apprendre l'anglais gratuitement", 
-        "8" : "Suivez la Mecque directement", 
-        "9" : "Les dernières statistiques sur la propagation du virus à ce jour"
-    }
-    , 
-    "TEST YOURSELF" : {
-        "title" : "Testez-vous",
-        "y" : "OUI",
-        "n" : "NON",
-        "button" : "Confirmer et passer à la question suivante" ,
-        "p" : "Vous avez",
-        "pend" : "score",
-        "c1" : "Vous Votre état ne semble pas vous préoccuper" ,
-        "c2" : "Vous devez appeler un médecin maintenant..",
-        "repeat" : "Répéter le test" 
-    },
-    "QUIZ" : {
-        "title" : "Quiz" , 
-        "f" : "Es-tu en sécurité" , 
-        "y" : "YES" , 
-        "n" : "NON" , 
-        "button" : "Question suivante", 
-        "p" : "Merci, vous pouvez avoir plus d'informations dans notre", 
-        "pend" :"Section santé",
-        "repeat" : "Répéter le test"
-    } 
-    
-
 }

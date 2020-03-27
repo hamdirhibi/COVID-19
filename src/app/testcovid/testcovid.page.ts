@@ -18,12 +18,12 @@ export class TestcovidPage implements OnInit {
   
   alert= ""; 
   questions = [
-    'Have you come into close contact with someone who has a laboratory confirmed COVID – 19 diagnosis? ', 
-    'Do you have a fever ?' , 
-    'In the past few days, do you have a cough or increase in your usual cough?' ,
-    'Do you have a sore throat these past few days?' ,
-    'In the past 24 hours, have you had diarrhea?' ,
-    'Do you have  symptoms of lower respiratory illness such as  shortness of breath or difficulty breathing?'
+    '1', 
+    '2' , 
+    '3' ,
+    '4' ,
+    '5' ,
+    '6'
  ] ; 
    scores = [2 , 2 , 2 , 1 , 1 , 1];  
    statusYes =[false,false,false,false,false,false];

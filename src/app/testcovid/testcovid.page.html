@@ -13,10 +13,11 @@
   <div *ngIf="index < 6" class="login-form">  
     <ion-button  color="tertiary" [disabled]="index === 0" (click)="return()"><ion-icon name="arrow-back"></ion-icon></ion-button>
     <h3 text-center>
-      <strong>{{questions[index]}}</strong>
+      <strong>
+        {{"TEST YOURSELF."+questions[index] | translate }}</strong>
     </h3>
     <div text-center *ngIf="message"  >
-       <p style="color: red;">You need to select Yes or No</p> 
+       <p style="color: red;">{{"TEST YOURSELF".error | translate}}</p> 
     </div>
     <ion-list lines="none">
       <ion-radio-group>
