@@ -16,9 +16,9 @@ export class ConversationPage implements OnInit {
   message : String =""; 
   showOptions: boolean = false;
   messages: Array<any> = [
-    { text: "Hello there!😊", type: 'received', created: '14:02' },
-    { text: "Welcome to CovidAssist", type: 'received', created: '14:02' },
-    { text: "I'm here to help you, ask me what you want about COVID-19!", type: 'received', created: '14:05' },
+    { text: "Hello there!😊", type: 'received' },
+    { text: "Welcome to CovidAssist", type: 'received' },
+    { text: "I'm here to help you, ask me what you want about COVID-19!", type:"received"},
     
   ];
 

@@ -1,6 +1,7 @@
 {
     "CONVERSATION" : {
-        "title" : "Conversation"
+        "title" : "Conversation",
+        "CLICK" : "Click here to chat"
 
     }, 
     "CONTACTS" : {
@@ -80,7 +81,29 @@
         "button" : "Next Question", 
         "p" : "Thank you, you can have more information in our", 
         "pend" :"Health section",
-        "repeat" : "Repeat test"
-    } 
+        "repeat" : "Repeat test",
+        "1" : "Do you Wash your hands frequently?", 
+        "2" :"Do you often touch your eyes, nose and mouth?",
+        "3" :"Do you cover your mouth and nose with your bent elbow or tissue when you cough or sneeze?",
+        "4" : "Are you a patient of any Cardiovascular or Chronic respiratory disease, Diabetes, Hypertension or Cancer?",
+        "5" :"If you find yourself with fever, cough or difficulty in breathing, do you know exactly what to do in the current scenario?",
+        "1Y" : "Good, wash your hands frequently" , 
+        "2Y" : "Avoid touching eyes, nose and mouth.",
+        "3Y" : "Good, make sure you, and the people around you, follow good respiratory hygiene.",
+        "4Y" : "Take care, you have a higher chance of complication if infected",
+        "5Y" : "Good, if you're symptomatic, seeking medical care is the first thing to do.",
+        "1N": "You need to wash your hands more frequently", 
+        "2N": "Good, avoid touching eyes, nose and mouth.",
+        "3N": "Practice good respiratory hygiene.",
+        "4N":  "You have considerably lesser chance of complications",
+        "5N":  "Seek urgent medical care if you're symptomatic.",
+        "1M":  "Washing your hands frequently, regularly and thoroughly with soap and water or using alcohol-based hand rub kills viruses that may be on your hands.",
+        "2M": "Hands touch many surfaces and can pick up viruses. Once contaminated, hands can transfer the virus to your eyes, nose or mouth. From there, the virus can enter your body and can make you sick.",
+        "3M":  "Cover your mouth and nose with your bent elbow or tissue when you cough or sneeze, then dispose of the used tissue immediately. Droplets spread virus. By following good respiratory hygiene you can protect the people around you from viruses such as cold, flu and COVID-19.",
+        "4M":  "The risk of fatality from Coronavirus is higher if you have any such pre-existing conditions. Take extra care if you fall into this category. Seek medical attention immediately if you experience the symptoms.",
+        "5M":  "If you have fever, cough and difficulty breathing, seek medical care as soon as possible. Stay home if you feel unwell. If you have a fever, cough and difficulty breathing, seek medical attention and call in advance. Follow the directions of your local health authority.National and local authorities will have the most up to date information on the situation in your area. Calling in advance will allow your health care provider to quickly direct you to the right health facility. This will also protect you and help prevent spread of viruses and other infections."
+
+        } ,
+    "STEP": "continue"
 
 }

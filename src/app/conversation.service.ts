@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../environments/environment';
-
+import { TranslateService } from '@ngx-translate/core';
 
 const API_URL = environment.apiChat;
 
@@ -10,8 +10,12 @@ const API_URL = environment.apiChat;
   providedIn: 'root'
 })
 export class ConversationService {
-
-  constructor(private httpClient: HttpClient) { }
+  
+  lang = 'en';
+  constructor(private httpClient: HttpClient, private translate : TranslateService) { 
+   this.lang = this.translate.getBrowserLang();
+   if(this.lang !== 'ar') this.lang = 'en';
+  }
   
   httpOptions = {
     headers: new HttpHeaders({
@@ -20,7 +24,7 @@ export class ConversationService {
   }
 
   getMessage(message){
-    return this.httpClient.get<any>(`${API_URL}en/${message}` , this.httpOptions);
+    return this.httpClient.get<any>(`${API_URL}${this.lang}/${message}` , this.httpOptions);
   }
 
 }

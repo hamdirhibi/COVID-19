@@ -1,21 +1,59 @@
-<div style="background-color: white; width : 100% ;  height : 100% ;padding : 50 ; text-align: center;  " >
-  
-  <img src="../../assets/img/logo/logo3.png" class="corona" style="margin-top: 10rem;"> 
+<!-- <div class="buttons-container" style="position: " >
+  <ion-button> {{"STEP"|translate}}   <ion-icon name="arrow-dropright"></ion-icon>  </ion-button>
 
-  <div class="spinner">
-    <div class="bounce1"></div>
-    <div class="bounce2"></div>
-    <div class="bounce3"></div>
+</div> -->
+
+<ion-header >
+  <ion-toolbar style="text-align: right;">
+
+  <ion-button (click)="gohome()"> {{"STEP"|translate}}   <ion-icon name="arrow-dropright"></ion-icon>  </ion-button>
+
+
+
+</ion-toolbar>
+</ion-header>    
+
+ <ion-content force-overscroll="false">
+  <gl-background-video src="assets/background-video/video.mp4" poster="assets/background-video/background-video-image.png"></gl-background-video>
+<div style="text-align: center;margin-top: 22em;margin-left: 16em;">
+  <div class="sk-chase">
+    <div class="sk-chase-dot"></div>
+    <div class="sk-chase-dot"></div>
+    <div class="sk-chase-dot"></div>
+    <div class="sk-chase-dot"></div>
+    <div class="sk-chase-dot"></div>
+    <div class="sk-chase-dot"></div>
   </div>
-
-
- <div class = "container" >
-  <img src="../../assets/img/1.png" class="img"> 
-<img src="../../assets/img/2.png"  class="img">   
-<img src="../../assets/img/3.png" class="img"> 
-<img src="../../assets/img/5.png" class="img" >
+</div>
+  <!-- <div class="page-centered-element" style="bottom: 20;">
   
-</div>
+    <div class="buttons-container" >
+      <ion-button> {{"STEP"|translate}}   <ion-icon name="arrow-dropright"></ion-icon>  </ion-button>
+
+    </div>
+  </div>
+    <!-- <div class="content"> 
+      <h1>Welcome</h1>
+      <h5>COVID-ASSIST</h5>
+      <div class="buttons-container">
+        <ion-button>GO</ion-button>
+      </div>
+      
+    </div>
+  </div> -->
+  <ion-footer style="margin-top: 15em;">
+    <ion-toolbar>
+      <img src="../../assets/img/1.png" width="25%"> 
+      <img src="../../assets/img/2.png"  width="25%">   
+      <img src="../../assets/img/3.png" width="25%"> 
+      <img src="../../assets/img/5.png" width="25%">    
+          
+    </ion-toolbar>
+  </ion-footer>    
+    
+
+      
 
 
-</div>
+</ion-content>
+

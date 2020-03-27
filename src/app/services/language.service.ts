@@ -14,6 +14,7 @@ export class LanguageService {
   constructor(private translate : TranslateService , private storage : Storage   ) { }
   setInitialApplanguage(){
         let language = this.translate.getBrowserLang(); 
+        if(language !== 'ar' && language !== 'fr') language="en";
         this.translate.setDefaultLang(language); 
         
         this.storage.get(LNG_KEY).then(val =>{

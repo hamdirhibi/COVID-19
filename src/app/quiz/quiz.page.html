@@ -9,7 +9,7 @@
 <ion-content>
   <div *ngIf="index < 5" class="login-form">  
     <h3 text-center>
-      <strong>{{questions[index]}}</strong>
+      <strong>{{"QUIZ."+questions[index] | translate}}</strong>
     </h3>
     <ion-list lines="none">
       <ion-radio-group>
@@ -32,13 +32,13 @@
     </ion-list>
 
     <div>
-         <h2 *ngIf="index % 2 == 0 && statusYes[index]" style="color:green">{{responseYes[index]}}</h2>
-         <h2 *ngIf="index % 2 != 0  && statusYes[index]"  style="color:red">{{responseYes[index]}}</h2>
-         <h2 *ngIf="index % 2 == 0 && statusNo[index]" style="color:red">{{responseNo[index]}}</h2>
-         <h2 *ngIf="index % 2 != 0  && statusNo[index]"  style="color:green">{{responseNo[index]}}</h2>
+         <h2 *ngIf="index % 2 == 0 && statusYes[index]" style="color:green">{{"QUIZ."+responseYes[index]+"Y" | translate}}</h2>
+         <h2 *ngIf="index % 2 != 0  && statusYes[index]"  style="color:red">{{"QUIZ."+responseYes[index]+"Y" | translate}}</h2>
+         <h2 *ngIf="index % 2 == 0 && statusNo[index]" style="color:red">{{"QUIZ."+responseNo[index]+"N" | translate}}</h2>
+         <h2 *ngIf="index % 2 != 0  && statusNo[index]"  style="color:green">{{"QUIZ."+responseNo[index]+"N" | translate}}</h2>
         
          <p *ngIf="statusYes[index] || statusNo[index]">
-           {{messages[index]}}
+           {{"QUIZ."+messages[index]+"M"|translate}}
          </p>
     </div>
 
