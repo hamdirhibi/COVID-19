@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, Platform, Events } from '@ionic/angular';
 import { LanguageService } from '../services/language.service';
 import { ModalController } from '@ionic/angular';
 import { IonicSelectableComponent } from 'ionic-selectable';
+import { Tab4PageModule } from '../tab4/tab4.module';
+import { Tab4page } from '../tab4/tab4.page';
 
 class Port {
   public id: string;
@@ -72,6 +74,7 @@ export class Tab1Page  implements OnInit{
   // ];
 
   constructor(
+    private events: Events,
     private ModalController : ModalController,
     private navCtrl: NavController,
     private languageService : LanguageService  , 
@@ -84,8 +87,8 @@ export class Tab1Page  implements OnInit{
     this.languageService.setLanguage(this.port.id);
     
     console.log('port:', event.value);
-    //window.location.reload();
-
+    this.events.publish('togglenews'); 
+ 
   }
   private showConversationPage ()
   {

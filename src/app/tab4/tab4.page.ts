@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { NewsService } from '../news.service';
 import { LanguageService } from '../services/language.service';
 import { TranslateService } from '@ngx-translate/core';
+import { Events } from '@ionic/angular';
 
 const API_URL = environment.apiUrl;
 const API_KEY = environment.apiKey;
@@ -21,6 +22,7 @@ export class Tab4page implements OnInit {
   lang: string ;
 
   constructor(
+    private events: Events,
     private router: Router,
     //private http: HttpClient,
     private newsService: NewsService , 
@@ -28,33 +30,42 @@ export class Tab4page implements OnInit {
     private translate: TranslateService , 
     private languageServie : LanguageService 
     ) {
-
+      events.subscribe('togglenews', () => {
+        console.log("events received ") ; 
+        this.page=  1 ; 
+        this.data = null  ; 
+        this.load() ; 
+      });
 
    
      }
+     load(){
+      this.lang = this.languageService.selected ;  
 
+      if(this.lang !== 'ar'&&this.lang!=='fr') 
+      this.lang = 'en';
+  console.log(this.lang);
+
+
+  let lg   ; 
+  if (this.lang=='en') lg = 'us'; 
+  if (this.lang=='ar') lg = 'ae'; 
+  
+  this.newsService
+  .getData(
+    `top-headlines?country=${lg}&category=business&pageSize=5&page=${
+      this.page
+    }`
+  )
+  .subscribe(data => {
+    console.log(data);
+    this.data = data;
+  });
+ 
+
+     }
   ngOnInit() {
-    this.lang = this.languageService.selected ;  
-    if(this.lang !== 'ar'&&this.lang!=='fr') 
-        this.lang = 'en';
-    console.log(this.lang);
-
-
-    let lg   ; 
-    if (this.lang=='en') lg = 'us'; 
-    if (this.lang=='ar') lg = 'ae'; 
-    
-    this.newsService
-    .getData(
-      `top-headlines?country=${lg}&category=business&pageSize=5&page=${
-        this.page
-      }`
-    )
-    .subscribe(data => {
-      console.log(data);
-      this.data = data;
-    });
-   
+    this.load() ; 
   }
 
 
