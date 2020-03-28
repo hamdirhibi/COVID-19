@@ -10,7 +10,12 @@
 
 
         <ion-list >
-
+          <ion-menu-toggle auto-hide="true">
+            <ion-item routerLink="/tabs/tabs/tab1" routerDirection="forward">
+                <ion-icon name="chatboxes" slot="start"></ion-icon>
+                {{"CONVERSATION.title" | translate}}
+            </ion-item>
+          </ion-menu-toggle>
 
         <ion-menu-toggle auto-hide="true">
           <ion-item routerLink="/tabs/tabs/tab4" routerDirection="forward">
@@ -19,12 +24,7 @@
           </ion-item>
         </ion-menu-toggle>
         
-        <ion-menu-toggle auto-hide="true">
-          <ion-item routerLink="/tabs/tabs/tab1" routerDirection="forward">
-              <ion-icon name="chatboxes" slot="start"></ion-icon>
-              {{"CONVERSATION.title" | translate}}
-          </ion-item>
-        </ion-menu-toggle>
+     
  
         <ion-menu-toggle auto-hide="true">
           <ion-item routerLink="/tabs/tabs/tab5" routerDirection="forward">

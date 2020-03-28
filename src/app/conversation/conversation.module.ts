@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { TranslateModule } from '@ngx-translate/core';
 import { ConversationPage } from './conversation.page';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   {
@@ -18,6 +19,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
+    HttpClientModule, 
     CommonModule,
     FormsModule,
     IonicModule,
