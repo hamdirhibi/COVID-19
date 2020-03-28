@@ -3,7 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../environments/environment';
 import { TranslateService } from '@ngx-translate/core';
 
-const API_URL = environment.apiChat;
+//const API_URL = environment.apiChat;
+const  API_URL ='http://51.79.27.231:5000/ask/api/v1.0/' ;
 
 
 @Injectable({
@@ -26,5 +27,4 @@ export class ConversationService {
   getMessage(message){
     return this.httpClient.get<any>(`${API_URL}${this.lang}/${message}` , this.httpOptions);
   }
-
 }

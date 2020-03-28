@@ -16,16 +16,14 @@ export class LanguageService {
         let language = this.translate.getBrowserLang(); 
         if(language !== 'ar' && language !== 'fr') language="en";
         this.translate.setDefaultLang(language); 
-        this.selected = 'fr' ; 
-
+        this.selected = language ; 
         //console.log(this.selected); 
         this.storage.get(LNG_KEY).then(val =>{
-          if (val){
+        if (val){
             this.setLanguage(language);
             this.selected=val ;  
           }
-         
-      })
+        })
   
   
       }
