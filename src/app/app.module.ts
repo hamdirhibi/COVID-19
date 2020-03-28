@@ -15,6 +15,7 @@ import { IonicStorageModule } from '@ionic/storage'
 import { BackgroundMode } from '@ionic-native/background-mode/ngx';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
+import { Network } from '@ionic-native/network/ngx';
 
 export function createTraslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, "assets/i18n/", ".json");
@@ -48,7 +49,8 @@ export function createTraslateLoader(http: HttpClient) {
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     BackgroundMode,
     Geolocation,
-    LocalNotifications
+    LocalNotifications,
+    Network
     
   ],
   bootstrap: [AppComponent]
