@@ -11,9 +11,9 @@ export class WelcomepagePage implements OnInit {
 
   constructor(private router : Router) { }
 
-  ngOnInit() {
-   // await this.sleep(60000);
-      //  this.router.navigate(['/tabs/tabs/tab1']); 
+  async ngOnInit() {
+    await this.sleep(3000);
+        this.router.navigate(['/tabs/tabs/tab1']); 
 
     }
     sleep(ms) {
