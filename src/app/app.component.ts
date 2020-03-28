@@ -38,16 +38,23 @@ export class AppComponent {
       this.geolocation.getCurrentPosition()
         .then(position => {
           this.originalCoords= position.coords;
+          console.log("original=" + this.originalCoords);
+          
         })
         .catch((error) => {
           console.log('error', error);
         })
-    });
-    this.backgroundMode.on("activate").subscribe(() => {
-      console.log("activated");
-      setInterval(this.trackPosition, 2000);
-    });
-    this.backgroundMode.enable();
+        this.backgroundMode.on("activate").subscribe(() => {
+          console.log("activated");
+          this.backgroundMode.disableWebViewOptimizations();
+          this.backgroundMode.moveToBackground();
+         // this.showNotification();
+          setInterval(this.trackPosition, 2000);
+        });
+        
+        this.backgroundMode.enable();
+      });
+   
 
 
 
@@ -106,7 +113,8 @@ connectSubscription.unsubscribe();
 
   showNotification () {
     this.localNotifications.schedule({
-      text: 'Please wash your hand'
+      text: 'Please wash your hand',
+      silent: false
     });
 
     this.notificationAlreadyReceived = true;
@@ -117,6 +125,7 @@ connectSubscription.unsubscribe();
     this.geolocation
       .getCurrentPosition()
       .then(position => {
+        console.log('tracking...');
         this.handleMovement(position.coords);
       })
       .catch(error => {
@@ -127,18 +136,21 @@ connectSubscription.unsubscribe();
 
   }
   handleMovement = coords => {
+     console.log('here');
     const distanceMoved = this.getDistanceFromLatLonInKm(
       this.originalCoords.latitude,
       this.originalCoords.longitude,
       coords.latitude,
       coords.longitude
     );
-  
+    console.log("distmoved = " + distanceMoved); 
+    console.log('distance to move=' + this.DISTANCE_TO_MOVE);
     if (
-      distanceMoved > this.DISTANCE_TO_MOVE &&
-      this.notificationAlreadyReceived === false
+      distanceMoved > this.DISTANCE_TO_MOVE 
+      && this.notificationAlreadyReceived === false
     ) {
-      this.showNotification();
+      console.log('distance');
+       this.showNotification();
     }
   };
 
