@@ -6,20 +6,26 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { LanguageService } from './services/language.service';
 import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { Network } from '@ionic-native/network/ngx'; //ngx
+
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html'
 })
 export class AppComponent {
 
+
+
   notificationAlreadyReceived = false;
   originalCoords;
 
 
-  DISTANCE_TO_MOVE = 0.003069;
+  DISTANCE_TO_MOVE = 0.00069;
 
 
   constructor(
+    private network: Network,
     public localNotifications: LocalNotifications,
     private backgroundMode: BackgroundMode,
     public geolocation: Geolocation,
@@ -29,11 +35,6 @@ export class AppComponent {
     private languageservice : LanguageService
   ) {
     platform.ready().then(() => {
-      this.backgroundMode.on("activate").subscribe(() => {
-        console.log("activated");
-        setInterval(this.trackPosition, 2000);
-      });
-      
       this.geolocation.getCurrentPosition()
         .then(position => {
           this.originalCoords= position.coords;
@@ -42,11 +43,56 @@ export class AppComponent {
           console.log('error', error);
         })
     });
-    
+    this.backgroundMode.on("activate").subscribe(() => {
+      console.log("activated");
+      setInterval(this.trackPosition, 2000);
+    });
+    this.backgroundMode.enable();
+
+
 
     this.sideMenu();
     this.initializeApp();
+    this.testit() ; 
   }
+
+  testit(){
+
+
+
+    // watch network for a disconnection
+let disconnectSubscription = this.network.onDisconnect().subscribe(() => {
+  console.log('network was disconnected :-(');
+});
+
+// stop disconnect watch
+disconnectSubscription.unsubscribe();
+
+
+// watch network for a connection
+let connectSubscription = this.network.onConnect().subscribe(() => {
+  alert('network connected!');
+  // We just got a connection but we need to wait briefly
+   // before we determine the connection type. Might need to wait.
+  // prior to doing any api requests as well.
+  setTimeout(() => {
+    if (this.network.type === 'wifi') {
+      alert('we got a wifi connection, woohoo!');
+    }
+  }, 3000);
+});
+
+// stop connect watch
+connectSubscription.unsubscribe();
+  }
+
+
+  // watch network for a disconnection
+ disconnectSubscription = this.network.onDisconnect().subscribe(() => {
+  alert('network was disconnected :-(');
+});
+
+
 
   initializeApp() {
     this.platform.ready().then(() => {
@@ -167,6 +213,10 @@ export class AppComponent {
       }
     ]
   }
+
+
+
+
 
   
 }
