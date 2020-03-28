@@ -39,7 +39,9 @@ export class AppComponent {
        
        
 
-     this.diagnostic.requestRuntimePermission(this.diagnostic.permission.ACCESS_FINE_LOCATION).then(() => {
+     this.diagnostic.requestRuntimePermission(this.diagnostic.permission.ACCESS_FINE_LOCATION).then((status) => {
+      console.log(status);
+      if(status != 'DENIED_ONCE'){
       this.geolocation.getCurrentPosition()
       .then(position => {
         this.originalCoords= position.coords;
@@ -59,6 +61,7 @@ export class AppComponent {
       
       this.backgroundMode.enable();           
       console.log('success');
+    }
      }); 
    /*
     this.geolocation.getCurrentPosition()
