@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import {ConversationService} from '../conversation.service';
 import { analyzeAndValidateNgModules } from '@angular/compiler';
+import {TranslateService} from '@ngx-translate/core';
 @Component({
   selector: 'app-conversation',
   templateUrl: './conversation.page.html',
@@ -16,29 +17,33 @@ export class ConversationPage implements OnInit {
   message : String =""; 
   showOptions: boolean = false;
   messages: Array<any> = [
-    { text: "Hello there!😊", type: 'received' },
-    { text: "Welcome to CovidAssist", type: 'received' },
-    { text: "I'm here to help you, ask me what you want about COVID-19!", type:"received"},
-
-    
   ];
+  message1; 
+  message2;
+
 
   questions = [
-    'I am pregnant, should I be extra worried?' ,
-    'I think I have the new corona virus. What should I do?',
-    'What can I do to prevent the new coronavirus from spreading?',
-    'Why am I not allowed to shake hands anymore?',
-    
-  ]
+    '1' ,
+    '2',
+    '3',
+    '4'
+  ] ;
 
   container: HTMLElement;          
   constructor(
-    private conversationService:ConversationService
+    private conversationService:ConversationService,
+    private translate: TranslateService
+
     )
      { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { 
+      
+      this.message1 = {text: this.translate.instant("CONVERSATION.HELLO"),  type: 'received'};
+      this.message2 = {text:this.translate.instant("CONVERSATION.SEC"), type:'received' };
+      this.messages.push(this.message1);
+      this.messages.push(this.message2);      
+    }
 
   
     // this.scrollContainer = this.scrollFrame.nativeElement;  
@@ -84,8 +89,9 @@ export class ConversationPage implements OnInit {
   }*/
 
   sendSug(message){
-    this.showOptions=false; 
-    this.message = message;
+    this.showOptions=false;
+
+    this.message = this.translate.instant("CONVERSATION."+message);
     this.send(); 
   }
 

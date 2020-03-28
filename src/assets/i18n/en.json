@@ -2,7 +2,13 @@
     "CONVERSATION" : {
         "title" : "Conversation",
         "CLICK" : "Click here to chat",
-        "chose" : "Select Language"
+        "chose" : "Select Language",
+        "1" : "I am pregnant, should I be extra worried?" , 
+        "2" :  "I think I have the new corona virus. What should I do?", 
+        "3" :  "I am a housemate for someone who is ill. What should I do?",
+        "4" :  "Why am I not allowed to shake hands anymore?",
+        "HELLO" : "Hello I'm Amal" ,
+        "SEC" : "I'm here to help you, ask me what you want about COVID-19!"
 
     }, 
     "CONTACTS" : {
@@ -105,8 +111,8 @@
         "3M":  "Cover your mouth and nose with your bent elbow or tissue when you cough or sneeze, then dispose of the used tissue immediately. Droplets spread virus. By following good respiratory hygiene you can protect the people around you from viruses such as cold, flu and COVID-19.",
         "4M":  "The risk of fatality from Coronavirus is higher if you have any such pre-existing conditions. Take extra care if you fall into this category. Seek medical attention immediately if you experience the symptoms.",
         "5M":  "If you have fever, cough and difficulty breathing, seek medical care as soon as possible. Stay home if you feel unwell. If you have a fever, cough and difficulty breathing, seek medical attention and call in advance. Follow the directions of your local health authority.National and local authorities will have the most up to date information on the situation in your area. Calling in advance will allow your health care provider to quickly direct you to the right health facility. This will also protect you and help prevent spread of viruses and other infections."
-
-        } ,
+        } 
+         ,
     "STEP": "continue",
     "ARAB" : "Arabic"
     ,"ENGLISH" : "English" , 
