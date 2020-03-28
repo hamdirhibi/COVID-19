@@ -6,8 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { LanguageService } from './services/language.service';
 import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
-import { Network } from '@ionic-native/network/ngx'; //ngx
-
+import { Network } from '@ionic-native/network/ngx'; 
 
 @Component({
   selector: 'app-root',
@@ -69,7 +68,7 @@ export class AppComponent {
 
     // watch network for a disconnection
 let disconnectSubscription = this.network.onDisconnect().subscribe(() => {
-  console.log('network was disconnected :-(');
+  console.log('Network was disconnected ');
 });
 
 // stop disconnect watch
@@ -78,13 +77,13 @@ disconnectSubscription.unsubscribe();
 
 // watch network for a connection
 let connectSubscription = this.network.onConnect().subscribe(() => {
-  alert('network connected!');
+  alert('Network connected!');
   // We just got a connection but we need to wait briefly
    // before we determine the connection type. Might need to wait.
   // prior to doing any api requests as well.
   setTimeout(() => {
     if (this.network.type === 'wifi') {
-      alert('we got a wifi connection, woohoo!');
+      alert('We got a wifi connection, woohoo!');
     }
   }, 3000);
 });
@@ -96,7 +95,7 @@ connectSubscription.unsubscribe();
 
   // watch network for a disconnection
  disconnectSubscription = this.network.onDisconnect().subscribe(() => {
-  alert('network was disconnected :-(');
+  alert('Network was disconnected');
 });
 
 
@@ -177,17 +176,17 @@ connectSubscription.unsubscribe();
   sideMenu()
   {
     this.navigate =
-    [
+    [ {
+      title : "Profil",
+      url   : "/tabs/tabs/tab3",
+      icon  : "person"
+      },
       {
         title : "News",
         url   : "/tabs/tabs/tab4",
         icon  : "planet"
       },
-      {
-        title : "Profil",
-        url   : "/tabs/tabs/tab3",
-        icon  : "person"
-      },
+     
       {
         title : "Conversations",
         url   : "/tabs/tabs/tab1",

@@ -5,8 +5,8 @@ import { NewsPage } from './news/news.page';
 const routes: Routes = [
   { path: '', redirectTo: 'welcomepage', pathMatch: 'full' },
   { path: 'tabs', loadChildren: './tabs/tabs.module#TabsPageModule' },
-  { path: 'signup', loadChildren: './signup/signup.module#SignupPageModule' },
-  { path: 'enter-code', loadChildren: './enter-code/enter-code.module#EnterCodePageModule' },
+  // { path: 'signup', loadChildren: './signup/signup.module#SignupPageModule' },
+  // { path: 'enter-code', loadChildren: './enter-code/enter-code.module#EnterCodePageModule' },
   { path: 'conversation', loadChildren: './conversation/conversation.module#ConversationPageModule' },
   { path: 'news-single', loadChildren: './news/news.module#NewsPageModule' },
   { path: 'tabs', loadChildren: './tabs/tabs.module#TabsPageModule' },
