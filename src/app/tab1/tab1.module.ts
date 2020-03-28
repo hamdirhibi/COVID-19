@@ -5,15 +5,20 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Tab1Page } from './tab1.page';
 import { TranslateModule } from '@ngx-translate/core';
+import { IonicSelectableModule } from 'ionic-selectable';
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
+    IonicSelectableModule, 
+    RouterModule.forChild([{ path: '', component: Tab1Page }]),
     TranslateModule.forChild(), 
-    RouterModule.forChild([{ path: '', component: Tab1Page }])
+
   ],
-  declarations: [Tab1Page]
+  declarations: [Tab1Page],
+ // entryComponents: [ModalPage],
+
 })
 export class Tab1PageModule {}

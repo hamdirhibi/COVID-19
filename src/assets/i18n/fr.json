@@ -1,7 +1,9 @@
 {
     "CONVERSATION": {
         "title": "Conversation",
-        "CLICK" : "Cliquer ici pour discuter"
+        "CLICK" : "Cliquer ici pour discuter",
+        "chose" : "Chosir langue"
+
     },
     "CONTACTS": {
         "title": "Contact"
@@ -98,4 +100,11 @@
         "4M": "Le risque de décès par coronavirus est plus élevé si vous souffrez de telles conditions préexistantes. Faites très attention si vous tombez dans cette catégorie. Consultez immédiatement un médecin si vous ressentez les symptômes.",
         "5M": "Si vous avez de la fièvre, de la toux et des difficultés respiratoires, consultez un médecin dès que possible. Restez à la maison en cas de malaise. Si vous avez de la fièvre, de la toux et des difficultés respiratoires, consultez un médecin et appelez à l'avance. Suivez les instructions de votre autorité sanitaire locale. Les autorités nationales et locales disposeront des informations les plus récentes sur la situation dans votre région. Un appel à l'avance permettra à votre professionnel de la santé de vous diriger rapidement vers le bon établissement de santé. vous et aidez à prévenir la propagation des virus et autres infections. "
     }
+    ,
+    "STEP" : "Continuer",
+    "ARAB" : "Arabe"
+    ,"ENGLISH" : "Anglais" , 
+    "FRENCH" : "Français"
+
+
 }
