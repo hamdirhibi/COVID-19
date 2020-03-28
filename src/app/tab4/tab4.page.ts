@@ -90,8 +90,11 @@ export class Tab4page implements OnInit {
     this.http
     .get("http://newsapi.org/v2/top-headlines?country=fr&&category=health&&pageSize=5&page="+this.page+"&&apiKey=4d97ac9b1619491ca1eccf0687e0305e")
     .subscribe(data => {
-      console.log(data);
-      this.data = data;
+      for (const article of data['articles']) {
+        this.data.articles.push(article);
+      }
+      event.target.complete();
+      console.log(this.data); 
     });
   
   }
@@ -119,7 +122,7 @@ export class Tab4page implements OnInit {
     console.log(article);
     this.newsService.currentArticle = article;
     localStorage.setItem('title',article.title); 
-    localStorage.setItem('content',article.content); 
+    localStorage.setItem('content',article.description); 
     localStorage.setItem('author',article.author); 
     localStorage.setItem('urlToImage',article.urlToImage); 
 
