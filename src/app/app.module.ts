@@ -16,7 +16,7 @@ import { BackgroundMode } from '@ionic-native/background-mode/ngx';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 import { Network } from '@ionic-native/network/ngx';
-
+import { Diagnostic } from '@ionic-native/diagnostic/ngx';
 export function createTraslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, "assets/i18n/", ".json");
 }
@@ -50,7 +50,8 @@ export function createTraslateLoader(http: HttpClient) {
     BackgroundMode,
     Geolocation,
     LocalNotifications,
-    Network
+    Network ,
+    Diagnostic
     
   ],
   bootstrap: [AppComponent]

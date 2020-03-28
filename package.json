@@ -22,6 +22,7 @@
     "@angular/router": "^7.2.16",
     "@ionic-native/background-mode": "^5.23.0",
     "@ionic-native/core": "^5.23.0",
+    "@ionic-native/diagnostic": "^5.23.0",
     "@ionic-native/geolocation": "^5.23.0",
     "@ionic-native/local-notifications": "^5.23.0",
     "@ionic-native/native-audio": "^5.23.0",
@@ -105,7 +106,8 @@
       "cordova-plugin-background-mode": {},
       "cordova-plugin-geolocation": {},
       "cordova-plugin-network-information": {},
-      "cordova-plugin-local-notification": {}
+      "cordova-plugin-local-notification": {},
+      "cordova.plugins.diagnostic": {}
     },
     "platforms": [
       "android"

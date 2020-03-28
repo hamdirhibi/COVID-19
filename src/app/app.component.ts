@@ -7,7 +7,7 @@ import { LanguageService } from './services/language.service';
 import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { Network } from '@ionic-native/network/ngx'; //ngx
-
+import { Diagnostic } from '@ionic-native/diagnostic/ngx';
 
 @Component({
   selector: 'app-root',
@@ -32,30 +32,55 @@ export class AppComponent {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private languageservice : LanguageService
+    private languageservice : LanguageService,
+    private diagnostic: Diagnostic
   ) {
     platform.ready().then(() => {
-      this.geolocation.getCurrentPosition()
-        .then(position => {
-          this.originalCoords= position.coords;
-          console.log("original=" + this.originalCoords);
-          
-        })
-        .catch((error) => {
-          console.log('error', error);
-        })
-        this.backgroundMode.on("activate").subscribe(() => {
-          console.log("activated");
-          this.backgroundMode.disableWebViewOptimizations();
-          this.backgroundMode.moveToBackground();
-         // this.showNotification();
-          setInterval(this.trackPosition, 2000);
-        });
-        
-        this.backgroundMode.enable();
-      });
-   
+       
+       
 
+     this.diagnostic.requestRuntimePermission(this.diagnostic.permission.ACCESS_FINE_LOCATION).then(() => {
+      this.geolocation.getCurrentPosition()
+      .then(position => {
+        this.originalCoords= position.coords;
+        console.log("original=" + this.originalCoords);
+        
+      })
+      .catch((error) => {
+        console.log('error', error);
+      })
+      this.backgroundMode.on("activate").subscribe(() => {
+        console.log("activated");
+        this.backgroundMode.disableWebViewOptimizations();
+        this.backgroundMode.moveToBackground();
+       // this.showNotification();
+        setInterval(this.trackPosition, 2000);
+      });
+      
+      this.backgroundMode.enable();           
+      console.log('success');
+     }); 
+   /*
+    this.geolocation.getCurrentPosition()
+    .then(position => {
+      this.originalCoords= position.coords;
+      console.log("original=" + this.originalCoords);
+      
+    })
+    .catch((error) => {
+      console.log('error', error);
+    })
+    this.backgroundMode.on("activate").subscribe(() => {
+      console.log("activated");
+      this.backgroundMode.disableWebViewOptimizations();
+      this.backgroundMode.moveToBackground();
+     // this.showNotification();
+      setInterval(this.trackPosition, 2000);
+    });
+    
+    this.backgroundMode.enable();
+    */
+  });
 
 
     this.sideMenu();
