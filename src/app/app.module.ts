@@ -12,7 +12,9 @@ import  { HttpClientModule , HttpClient } from '@angular/common/http' ;
 import { TranslateModule  , TranslateLoader, TranslateService } from '@ngx-translate/core' ;
 import {TranslateHttpLoader } from '@ngx-translate/http-loader'; 
 import { IonicStorageModule } from '@ionic/storage'
-
+import { BackgroundMode } from '@ionic-native/background-mode/ngx';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 
 export function createTraslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, "assets/i18n/", ".json");
@@ -21,7 +23,10 @@ export function createTraslateLoader(http: HttpClient) {
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule  ,     IonicSelectableModule , 
+  imports: [BrowserModule,
+     IonicModule.forRoot(),
+      AppRoutingModule  ,    
+       IonicSelectableModule , 
     HttpClientModule, 
     IonicStorageModule.forRoot() , 
     TranslateModule.forRoot({
@@ -40,7 +45,11 @@ export function createTraslateLoader(http: HttpClient) {
     
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    BackgroundMode,
+    Geolocation,
+    LocalNotifications
+    
   ],
   bootstrap: [AppComponent]
 })

@@ -44,13 +44,13 @@ export class Tab4page implements OnInit {
 
       if(this.lang !== 'ar'&&this.lang!=='fr') 
       this.lang = 'en';
-  console.log(this.lang);
+      console.log(this.lang);
 
 
   let lg   ; 
   if (this.lang=='en') lg = 'us'; 
   if (this.lang=='ar') lg = 'ae'; 
-  
+  if (this.lang=='fr') lg ='it';
   this.newsService
   .getData(
     `top-headlines?country=${lg}&category=business&pageSize=5&page=${
@@ -75,6 +75,7 @@ export class Tab4page implements OnInit {
     let lg   ; 
     if (this.lang=='en') lg = 'us'; 
     if (this.lang=='ar') lg = 'ae'; 
+    if (this.lang=='fr') lg = 'fr'; 
 
     this.newsService
       .getData(

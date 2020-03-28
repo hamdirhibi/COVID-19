@@ -90,7 +90,7 @@ export class Tab1Page  implements OnInit{
     this.events.publish('togglenews'); 
  
   }
-  private showConversationPage ()
+  public showConversationPage ()
   {
     this.navCtrl.navigateForward('conversation')
   }
