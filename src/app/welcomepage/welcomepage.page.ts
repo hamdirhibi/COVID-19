@@ -12,14 +12,15 @@ export class WelcomepagePage implements OnInit {
   constructor(private router : Router) { }
 
   async ngOnInit() {
-    await this.sleep(3000);
-        this.router.navigate(['/tabs/tabs/tab1']); 
+    //await this.sleep(3000);
+      //  this.router.navigate(['/tabs/tabs/tab1']); 
 
     }
     sleep(ms) {
       return new Promise(resolve => setTimeout(resolve, ms));
     }
     gohome(){
+      
       this.router.navigate(['/tabs/tabs/tab1']); 
     }
 }
