@@ -8,8 +8,6 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { Tab5Page } from './tab5.page';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
-import { VideoPlayer } from '@ionic-native/video-player/ngx';
 import { TranslateModule } from '@ngx-translate/core';
 
 const routes: Routes = [
@@ -30,8 +28,6 @@ const routes: Routes = [
   providers: [
     StatusBar,
     SplashScreen,
-    VideoPlayer,
-    YoutubeVideoPlayer,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   declarations: [Tab5Page]
