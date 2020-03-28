@@ -7,7 +7,7 @@ import { analyzeAndValidateNgModules } from '@angular/compiler';
   styleUrls: ['./conversation.page.scss'],
 })
 export class ConversationPage implements OnInit {
-  @ViewChild('scrollframe') scrollFrame: ElementRef;
+  @ViewChild('scrollframe') myScrollContainer: ElementRef;
    scrollContainer: any;
    contactInfo: any = {
     name: 'Amal',
@@ -19,8 +19,17 @@ export class ConversationPage implements OnInit {
     { text: "Hello there!😊", type: 'received' },
     { text: "Welcome to CovidAssist", type: 'received' },
     { text: "I'm here to help you, ask me what you want about COVID-19!", type:"received"},
+
     
   ];
+
+  questions = [
+    'I am pregnant, should I be extra worried?' ,
+    'I think I have the new corona virus. What should I do?',
+    'What can I do to prevent the new coronavirus from spreading?',
+    'Why am I not allowed to shake hands anymore?',
+    
+  ]
 
   container: HTMLElement;          
   constructor(
@@ -29,14 +38,8 @@ export class ConversationPage implements OnInit {
      { }
 
   ngOnInit() {
-      this.ngAfterViewInit();
   }
-  ngAfterViewInit() {
 
-      this.container = document.getElementById("scrollframe") as HTMLElement ;           
-      this.container.scrollTop = this.container.scrollHeight;     
-
-    } 
   
     // this.scrollContainer = this.scrollFrame.nativeElement;  
   //  this.scrollToBottom() ; 
@@ -53,29 +56,38 @@ export class ConversationPage implements OnInit {
     this.messages.push(
        {
           text: this.message, type: 'send', created: new Date().toDateString() 
-       }); 
-       this.ngAfterViewInit();
-        const messageToSend = this.message; 
+       });
+         const messageToSend = this.message; 
         this.message="";
          
        //window.scrollTo(0,this.scrollContainer.scrollHeight);
-      this.ngAfterViewInit();
       this.conversationService
       .getMessage(messageToSend)
       .subscribe(data => { 
          this.messages.push({
           text: data.response , type:'received' 
-        })     
-       })
-       this.ngAfterViewInit() ; 
+         
+        }) ;
+        
+         
+       });
+         
   }
 
-  private scrollToBottom(): void {
+  /*private scrollToBottom(): void {
     this.scrollContainer.scroll({
       top: this.scrollContainer.scrollHeight,
       left: 0,
       bottom : 0 , 
       behavior: 'smooth'
     });
+  }*/
+
+  sendSug(message){
+    this.showOptions=false; 
+    this.message = message;
+    this.send(); 
   }
+
+  
 }
