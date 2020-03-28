@@ -24,7 +24,7 @@ export class Tab4page implements OnInit {
   constructor(
     private events: Events,
     private router: Router,
-    //private http: HttpClient,
+    private http: HttpClient,
     private newsService: NewsService , 
     private languageService : LanguageService,
     private translate: TranslateService , 
@@ -50,10 +50,19 @@ export class Tab4page implements OnInit {
   let lg   ; 
   if (this.lang=='en') lg = 'us'; 
   if (this.lang=='ar') lg = 'ae'; 
-  if (this.lang=='fr') lg ='it';
+  if (this.lang=='fr') {
+    this.http
+    .get("http://newsapi.org/v2/top-headlines?country=fr&&category=health&&pageSize=5&page="+this.page+"&&apiKey=4d97ac9b1619491ca1eccf0687e0305e")
+    .subscribe(data => {
+      console.log(data);
+      this.data = data;
+    });
+  
+  }
+  else {
   this.newsService
   .getData(
-    `top-headlines?country=${lg}&category=business&pageSize=5&page=${
+    `top-headlines?country=${lg}&&category=health&&pageSize=5&&page=${
       this.page
     }`
   )
@@ -63,6 +72,7 @@ export class Tab4page implements OnInit {
   });
  
 
+     }
      }
   ngOnInit() {
     this.load() ; 
@@ -75,11 +85,21 @@ export class Tab4page implements OnInit {
     let lg   ; 
     if (this.lang=='en') lg = 'us'; 
     if (this.lang=='ar') lg = 'ae'; 
-    if (this.lang=='fr') lg = 'fr'; 
+  //  if (this.lang=='fr') lg = 'fr'; 
+  if (this.lang=='fr') {
+    this.http
+    .get("http://newsapi.org/v2/top-headlines?country=fr&&category=health&&pageSize=5&page="+this.page+"&&apiKey=4d97ac9b1619491ca1eccf0687e0305e")
+    .subscribe(data => {
+      console.log(data);
+      this.data = data;
+    });
+  
+  }
+  else {
 
     this.newsService
       .getData(
-        `top-headlines?country=${lg}&category=business&pageSize=5&page=${
+        `top-headlines?country=${lg}&&category=health&&pageSize=5&page=${
           this.page
         }`
       )
@@ -93,6 +113,7 @@ export class Tab4page implements OnInit {
         console.log(this.data);
       });
   }
+}
 
   onGoToNewsSinglePage(article) {
     console.log(article);
