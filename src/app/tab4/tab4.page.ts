@@ -29,7 +29,8 @@ export class Tab4page implements OnInit {
     private languageService : LanguageService,
     private translate: TranslateService , 
     private languageServie : LanguageService 
-    ) {
+    ) 
+    {
       events.subscribe('togglenews', () => {
         console.log("events received ") ; 
         this.page=  1 ; 
@@ -52,7 +53,7 @@ export class Tab4page implements OnInit {
   if (this.lang=='ar') lg = 'ae'; 
   if (this.lang=='fr') {
     this.http
-    .get("http://newsapi.org/v2/top-headlines?country=fr&&category=health&&pageSize=5&page="+this.page+"&&apiKey=4d97ac9b1619491ca1eccf0687e0305e")
+    .get("https://newsapi.org/v2/top-headlines?country=fr&&category=health&&pageSize=5&page="+this.page+"&&apiKey=4d97ac9b1619491ca1eccf0687e0305e")
     .subscribe(data => {
       console.log(data);
       this.data = data;
@@ -88,7 +89,7 @@ export class Tab4page implements OnInit {
   //  if (this.lang=='fr') lg = 'fr'; 
   if (this.lang=='fr') {
     this.http
-    .get("http://newsapi.org/v2/top-headlines?country=fr&&category=health&&pageSize=5&page="+this.page+"&&apiKey=4d97ac9b1619491ca1eccf0687e0305e")
+    .get("https://newsapi.org/v2/top-headlines?country=fr&&category=health&&pageSize=5&page="+this.page+"&&apiKey=4d97ac9b1619491ca1eccf0687e0305e")
     .subscribe(data => {
       for (const article of data['articles']) {
         this.data.articles.push(article);
