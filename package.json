@@ -53,6 +53,7 @@
     "ionic4-rating": "^1.0.9",
     "jquery": "^3.4.1",
     "rxjs": "^6.5.4",
+    "string-similarity": "^4.0.1",
     "tslib": "^1.11.1",
     "zone.js": "~0.8.29"
   },
