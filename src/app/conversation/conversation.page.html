@@ -4,7 +4,7 @@
       <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-avatar slot="start" class="contact-avatar">
-      <img src="https://ui-avatars.com/api/?name=John+Doe" />
+      <img src="../../assets/img/avatar.png" />
     </ion-avatar>
     <ion-title>
       <ion-label>
@@ -17,7 +17,7 @@
 
 <ion-content class="bg" id="chat">
 
-  <div  #scrollframe class="chat-container" [scrollTop]="scrollframe.scrollHeight">
+  <div  id="scrollframe"  #scrollframe class="chat-container" [scrollTop]="scrollframe.scrollHeight">
      
     
     <div  *ngFor="let message of messages" class="chat-bubble" [(ngClass)]="message.type">
@@ -26,10 +26,12 @@
     </div>
   </div>
 
-  <div class="chat-controls" [ngClass]="{'active': showOptions}" style="padding-right: 10px;">
-    <ion-row class="option ion-text-center" *ngIf="showOptions" style="height: 100%;">
-      <ion-col  *ngFor="let question of questions" (click)="sendSug(question)"  class="chat-bubble"  style="cursor:pointer;background:#087d63 ;box-shadow:3px 3px gainsboro, -1em 0 .4em ;color:white;border-radius: 8px;" size="12">
-          {{ "CONVERSATION." +  question | translate  }} 
+  <div class="chat-controls" [ngClass]="{'active': showOptions}" style="padding-right: 10px;" >
+    <ion-row  class="option ion-text-center" *ngIf="showOptions" style="height: 100%;">
+      <ion-col  *ngFor="let question of questions" (click)="sendSug(question.question , question.response)"  class="chat-bubble"  style="cursor:pointer;background:#087d63 ;box-shadow:3px 3px gainsboro, -1em 0 .4em ;color:white;border-radius: 8px;" size="12">
+          
+        {{question.question}}
+        <!-- {{ "CONVERSATION." +  question | translate  }}  -->
       </ion-col>
     </ion-row>
     <ion-row class="bg-white" >

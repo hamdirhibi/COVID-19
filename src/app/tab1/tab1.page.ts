@@ -32,14 +32,13 @@ export class Tab1Page  implements OnInit{
         { id: 'ar', name: 'العربية' ,src : '../../assets/img/uae.png'}
       ];
   
-      if (this.lang=='en')
-        this.port = this.ports[0] ;
+      if (this.lang=='ar')
+        this.port = this.ports[2] ;
       else if (this.lang =='fr')
       this.port = this.ports[1] ;
       else 
-      this.port = this.ports[2] ;
-      
-       
+      this.port = this.ports[0] ;
+    
     }
 
   constructor(
