@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import {ConversationService} from '../conversation.service';
 import { analyzeAndValidateNgModules } from '@angular/compiler';
-import { Platform } from '@ionic/angular';
+import { Platform, Events } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
+import { LanguageService } from '../services/language.service';
 
 
 
@@ -29,7 +30,7 @@ export class ConversationPage implements OnInit {
   res : String[];
   json : String ; 
   message : String =""; 
-  showOptions: boolean = false;
+  showOptions: boolean = true;
   questions ; 
   dt : any = [
     { id : 1  , question :'What is COVID-19' , response : 'COVID-19 is the infectious disease caused by the most recently discovered coronavirus. This new virus and disease were unknown before the outbreak began in Wuhan, China, in December 2019. '},
@@ -40,22 +41,61 @@ export class ConversationPage implements OnInit {
     // ,{ id : 6  , question :'Who ai at risk of developing severe illness ' , response : 'While we are still learning about how COVID-2019 affects people, older persons and persons with pre-existing medical conditions (such as high blood pressure, heart disease, lung disease, cancer or diabetes)  appear to develop serious illness more often than others. '},
     // ,{ id : 7  , question :'The following measures ARE NOT effective against COVID-2019 and can be harmful: 1 Smoking 2 Wearing multiple masks 3     Taking antibiotics (See question 10 "Are there any medicines of therapies that can prevent or cure COVID-19?") 4  In any case, if you have fever, cough and difficulty breathing seek medical care early to reduce the risk of developing a more severe infection and be sure to share your recent travel history with your health care provider. '},
   ]
+  dt_fr : any = [
+    { id : 1  , question :"Qu'est-ce que COVID-19" , response : "COVID-19 est la maladie infectieuse causée par le coronavirus le plus récemment découvert. Ce nouveau virus et cette nouvelle maladie étaient inconnus avant le début de l'épidémie à Wuhan, en Chine, en décembre 2019."},
+    { id : 2  , question :'Quels sont les symptômes de COVID-19 ' , response :"Les symptômes les plus courants de COVID-19 sont la fièvre, la fatigue et la toux sèche. Certains patients peuvent souffrir de maux et de douleurs, de congestion nasale, d'écoulement nasal, de maux de gorge ou de diarrhée. Ces symptômes sont généralement légers et commencent progressivement. Certaines personnes sont infectées mais ne développent aucun symptôme et ne se sentent pas mal. La plupart des gens (environ 80%) se remettent de la maladie sans avoir besoin d'un traitement spécial. Environ 1 personne sur 6 qui reçoit COVID-19 tombe gravement malade et éprouve des difficultés à respirer. Les personnes âgées et celles qui ont des problèmes médicaux sous-jacents comme l'hypertension artérielle, des problèmes cardiaques ou le diabète sont plus susceptibles de développer une maladie grave. Les personnes souffrant de fièvre, de toux et de difficultés respiratoires doivent consulter un médecin."},
+    { id : 3  , question :"Qu'est-ce qu'un coronavirus" , response :"Les coronavirus sont une grande famille de virus qui peuvent provoquer des maladies chez les animaux ou les humains. Chez l'homme, plusieurs coronavirus sont connus pour provoquer des infections respiratoires allant du rhume à des maladies plus graves telles que le syndrome respiratoire du Moyen-Orient (MERS) et le syndrome respiratoire aigu sévère (SRAS). Le coronavirus le plus récemment découvert provoque la maladie à coronavirus COVID-19. "},
+    { id : 4 , question :"Que puis-je faire pour me protéger", response : "Restez au courant des dernières informations sur l'épidémie de COVID-19, disponibles sur le site Web de l'OMS et par le biais de votre autorité nationale et locale de santé publique. De nombreux pays à travers le monde ont vu des cas de COVID-19 et plusieurs ont vu des flambées. Les autorités chinoises et certains autres pays ont réussi à ralentir ou à arrêter leurs flambées. Cependant, la situation est imprévisible, alors vérifiez régulièrement les dernières nouvelles. Vous pouvez réduire vos risques d'être infecté ou de propager COVID-19 en prenant quelques précautions simples"},
+    { id : 5  , question :"dois-je m'inquiéter pour COVID-19" , response : "La maladie due à l'infection par COVID-19 est généralement bénigne, en particulier pour les enfants et les jeunes adultes. Cependant, il peut provoquer une maladie grave: environ 1 personne sur 5 qui l'attrape a besoin de soins hospitaliers. Il est donc tout à fait normal que les gens s'inquiètent de la façon dont l'épidémie de COVID-19 les affectera, eux et leurs proches. \ n Nous pouvons canaliser nos préoccupations en actions pour nous protéger, protéger nos proches et nos communautés. Au premier rang de ces actions figure le lavage régulier et minutieux des mains et une bonne hygiène respiratoire. Deuxièmement, restez informé et suivez les conseils des autorités sanitaires locales, y compris toute restriction mise en place sur les voyages, les déplacements et les rassemblements. \ n En savoir plus sur la façon de vous protéger sur https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public"} 
+    // ,{ id : 6  , question :'Who ai at risk of developing severe illness ' , response : 'While we are still learning about how COVID-2019 affects people, older persons and persons with pre-existing medical conditions (such as high blood pressure, heart disease, lung disease, cancer or diabetes)  appear to develop serious illness more often than others. '},
+    // ,{ id : 7  , question :'The following measures ARE NOT effective against COVID-2019 and can be harmful: 1 Smoking 2 Wearing multiple masks 3     Taking antibiotics (See question 10 "Are there any medicines of therapies that can prevent or cure COVID-19?") 4  In any case, if you have fever, cough and difficulty breathing seek medical care early to reduce the risk of developing a more severe infection and be sure to share your recent travel history with your health care provider. '},
+  ]
 
 
+  dt_ar: any = [
+    {id: 1, question: ' COVID-19 ما هي' ,  response: "COVID-19 هو المرض المعدي الذي يسببه أحدث فيروسات التاجية المكتشفة. كان هذا الفيروس والمرض الجديدان غير معروفين قبل بدء تفشي المرض في ووهان ، الصين ، في ديسمبر 2019. "}
+    ,{id:2, question: " COVID-19 ما هي أعراض" , response: "أكثر أعراض COVID-19 شيوعًا هي الحمى والتعب والسعال الجاف. قد يعاني بعض المرضى من آلام وآلام واحتقان بالأنف وسيلان الأنف أو التهاب الحلق أو الإسهال. هذه الأعراض عادة ما تكون خفيفة وتبدأ تدريجياً. يصاب بعض الأشخاص بالعدوى ولكن لا تظهر عليهم أي أعراض ولا يشعرون بتوعك. يتعافى معظم الأشخاص (حوالي 80٪) من المرض دون الحاجة إلى علاج خاص. يصاب حوالي 1 من كل 6 أشخاص مصابين بـ COVID-19 بمرض خطير ويواجه صعوبة في التنفس. كبار السن وأولئك الذين يعانون من مشاكل طبية كامنة مثل ارتفاع ضغط الدم أو مشاكل في القلب أو السكري ، هم أكثر عرضة للإصابة بمرض خطير. والسعال وصعوبة التنفس يجب أن تطلب العناية الطبية. "},
+    {id: 3, question:"coronavirus  ما هي  ", response: "الفيروسات التاجية هي مجموعة كبيرة من الفيروسات التي قد تسبب المرض في الحيوانات أو البشر. وفي البشر ، من المعروف أن العديد من الفيروسات التاجية تسبب التهابات في الجهاز التنفسي تتراوح من نزلات البرد إلى أمراض أكثر خطورة مثل متلازمة الشرق الأوسط التنفسية (MERS) ومتلازمة الجهاز التنفسي الحادة الوخيمة (SARS). أحدث فيروسات التاجية المكتشفة تسبب مرض فيروسات التاجية COVID-19. "},
+    {id: 4, question: 'ماذا يمكنني أن أفعل لنفسي' , response: "ابق على علم بآخر المعلومات حول تفشي COVID-19 ، والمتوفرة على موقع منظمة الصحة العالمية على الإنترنت ومن خلال هيئة الصحة العامة الوطنية والمحلية. وشهدت دول حول العالم حالات إصابة بـ COVID-19 ، وشهدت العديد من حالات تفشي المرض. وقد نجحت السلطات في الصين وبعض الدول الأخرى في إبطاء أو وقف تفشيها. ومع ذلك ، لا يمكن التنبؤ بالوضع لذا تحقق بانتظام من آخر الأخبار. احتمالات الإصابة بالعدوى أو نشر COVID-19 عن طريق اتخاذ بعض الاحتياطات البسيطة:"},
+    {id: 5, question: 'COVID-19  هل يجب أن أقلق بشأن ' ,  الرد: "المرض الناتج عن عدو, COVID-19 معتدل بشكل عام ، خاصة للأطفال والشباب. ومع ذلك ، يمكن أن يسبب مرضًا خطيرًا: حوالي 1 في كل يحتاج 5 أشخاص ممن يصابون به إلى رعاية في المستشفى ، لذلك من الطبيعي جدًا أن يقلق الناس بشأن كيفية تأثير تفشي COVID-19 عليهم وعلى أحبائهم. \ N يمكننا توجيه مخاوفنا إلى إجراءات لحماية أنفسنا وأحبائنا و أولاً وقبل كل شيء ، من هذه الإجراءات غسل اليدين بشكل منتظم وشامل والنظافة التنفسية الجيدة. ثانيًا ، ابق على اطلاع واتبع نصائح السلطات الصحية المحلية بما في ذلك أي قيود مفروضة على السفر والتنقل والتجمعات. \ n تعلم المزيد عن كيفية حماية نفسك على https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public "},
+    //، {id: 6، question: 'Who ai in خطر الإصابة بمرض شديد "، الرد:" بينما ما زلنا نتعلم كيف يؤثر COVID-2019 على الأشخاص وكبار السن والأشخاص الذين يعانون من حالات طبية موجودة مسبقًا (مثل ارتفاع ضغط الدم أو أمراض القلب أو أمراض الرئة أو السرطان أو مرض السكري) تظهر عليهم الإصابة بمرض خطير أكثر من غيرهم. '} ،
+    //، {id: 7، question: 'التدابير التالية ليست فعالة ضد COVID-2019 ويمكن أن تكون ضارة: 1 التدخين 2 ارتداء أقنعة متعددة 3 تناول المضادات الحيوية (انظر السؤال 10 "هل هناك أي أدوية للعلاجات التي يمكن أن تمنع أو شفاء COVID-19؟ ") 4 على أي حال ، إذا كنت تعاني من الحمى والسعال وصعوبة التنفس ، فاطلب الرعاية الطبية مبكرًا لتقليل خطر الإصابة بعدوى أكثر حدة وتأكد من مشاركة سجل سفرك الأخير مع مقدم الرعاية الصحية الخاص بك. '} ،
+  ]
 
-  messages: Array<any> = [
+
+  
+
+
+  messages : Array<any> ; 
+  messages_en: Array<any> = [
     { text: "Hello there!😊", type: 'received' },
     { text: "Welcome to Amal-Assist", type: 'received' },
     { text: "I'm here to help you, ask me what you want about COVID-19!", type:"received"},
 
   ];
+  messages_ar: Array<any> = [
+    { text: "😊 مرحبًا بكم!", type: 'received' },
+    { text: "Covid-Assist مرحبًا بك في ", type: 'received' },
+    { text: " COVID-19! أنا هنا لمساعدتك ، اسألني ماذا تريد عن ", type:"received"},
 
+  ];
+
+  messages_fr: Array<any> = [
+    { text: "Bonjour!😊", type: 'received' },
+    { text: "Bienvenue chez Covid-Assist", type: 'received' },
+    { text: "Je suis là pour vous aider, demandez-moi ce que vous voulez à propos de COVID-19!", type:"received"},
+
+  ];
+
+  lang  :String =  '' ; 
   container: HTMLElement;          
   constructor(
     private http :HttpClient ,
     //  stringSimilarity : String
     private os : Platform, 
-    private conversationService:ConversationService
+    private conversationService:ConversationService,
+    private language  : LanguageService,
+    private events: Events
     )
      { 
         this.http.get('../../assets/json/code.json').subscribe(data=>{
@@ -63,17 +103,34 @@ export class ConversationPage implements OnInit {
           this.res =   (this.json).toString().split("\n-"); 
        //   console.log(this.res);       
         })
+
+        events.subscribe('togglelang', () => {
+          console.log("events received ") ; 
+          this.messages = null  ; 
+          this.load() ; 
+        });
+  
      }
 
   ngOnInit() {
+    this.load() ;
+      
+    }
+    load(){
       this.os.ready().then(()=>{
         this.ngAfterViewInit();
        // this.importdata()
-       this.questions = this.dt ; 
-      })
-  
-    }
+       this.lang = this.language.selected; 
+       if (this.lang=='fr')
+      { this.questions = this.dt_fr ; this.messages = this.messages_fr ; } 
+       else if (this.lang=='ar')
+       { this.questions = this.dt_ar ; this.messages = this.messages_ar ; } 
+      else 
+      { this.questions = this.dt ; this.messages = this.messages_en ; } 
 
+      
+      })
+    }
   ngAfterViewInit() {
 
       this.container = document.getElementById("scrollframe") as HTMLElement ;           

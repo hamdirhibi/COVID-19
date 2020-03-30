@@ -84,18 +84,13 @@ export class AppComponent {
     this.backgroundMode.enable();
     */
   });
-
-
     this.sideMenu();
     this.initializeApp();
     this.testit() ; 
   }
 
   testit(){
-
-
-
-    // watch network for a disconnection
+// watch network for a disconnection
 let disconnectSubscription = this.network.onDisconnect().subscribe(() => {
   console.log('Network was disconnected ');
 });
@@ -116,10 +111,9 @@ let connectSubscription = this.network.onConnect().subscribe(() => {
     }
   }, 3000);
 });
-
 // stop connect watch
 connectSubscription.unsubscribe();
-  }
+}
 
 
   // watch network for a disconnection

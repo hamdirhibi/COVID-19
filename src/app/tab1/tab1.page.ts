@@ -56,6 +56,8 @@ export class Tab1Page  implements OnInit{
     
     console.log('port:', event.value);
     this.events.publish('togglenews'); 
+    this.events.publish('togglelang'); 
+    
   }
   
   public showConversationPage ()
