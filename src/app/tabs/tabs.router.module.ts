@@ -89,7 +89,15 @@ const routes: Routes = [
           }
         ]
       },
-
+      {
+        path: 'tab8',
+        children: [
+          {
+            path: '',
+            loadChildren: '../tab8/tab8.module#Tab8PageModule'
+          }
+        ]
+      },
       {
         path: '',
         redirectTo: '/tabs/tabs/tab1',

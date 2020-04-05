@@ -116,6 +116,8 @@
     "STEP": "continue",
     "ARAB" : "Arabic"
     ,"ENGLISH" : "English" , 
-    "FRENCH" : "French"
+    "FRENCH" : "French",
+    "STAT" : "Statistics"
+
 
 }

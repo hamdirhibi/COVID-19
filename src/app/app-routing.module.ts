@@ -14,6 +14,7 @@ const routes: Routes = [
   { path: 'testcovid', loadChildren: './testcovid/testcovid.module#TestcovidPageModule' },
   { path: 'quiz', loadChildren: './quiz/quiz.module#QuizPageModule' },
   { path: 'welcomepage', loadChildren: './welcomepage/welcomepage.module#WelcomepagePageModule' },
+  { path: 'tab8', loadChildren: './tab8/tab8.module#Tab8PageModule' },
 ];
 @NgModule({
   imports: [
