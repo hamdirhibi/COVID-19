@@ -137,10 +137,10 @@ Technical tools :
 ❖	technologies used : 
 
 
-➢	Front end : Ionic 4 
+➢	Ionic 4 
 
 
-➢	Back end : Flask
+
 
 
 
