@@ -9,7 +9,7 @@ The COVID-19 virus presents an unprecedented, global challenge. When citizens ar
 THE TEAM
 
 
-<img src="src/assets/captures/5.jpg" margin-right="100px" style="margin: 50px" width="200px" height="400px">
+<img src="src/assets/captures/11.png" margin-right="100px"  width="200px" height="400px" text-align="center">
 
 
 
@@ -21,13 +21,15 @@ DEFINITIONS, ACRONYMS AND ABBREVIATIONS
 ‒	Fake news 
 
 
-<img src="src/assets/captures/8.jpg" margin-right="100px" style="margin: 50px" width="200px" height="400px">
+   <img src="src/assets/captures/8.jpg" margin-right="100px" style="margin: 50px" width="200px" height="400px">                
+	<img src="src/assets/captures/12.jpg" margin-right="100px" style="margin: 50px" width="200px" height="400px">
 
 
 ‒	Chat-bot
 
 
 <img src="src/assets/captures/4.jpg" margin-right="100px" style="margin: 50px" width="200px" height="400px">
+<img src="src/assets/captures/7.jpg" margin-right="100px" style="margin: 50px" width="200px" height="400px">
 
 
 
@@ -48,6 +50,8 @@ DEFINITIONS, ACRONYMS AND ABBREVIATIONS
 
 ‒	Best Practices 
 
+<img src="src/assets/captures/13.jpg" margin-right="100px" style="margin: 50px" width="200px" height="400px">
+<img src="src/assets/captures/14.jpg" margin-right="100px" style="margin: 50px" width="200px" height="400px">
 
 
 
@@ -57,8 +61,8 @@ DEFINITIONS, ACRONYMS AND ABBREVIATIONS
 ‒	Best suggestions 
 
 
+<img src="src/assets/captures/15.jpg" margin-right="100px" style="margin: 50px" width="200px" height="400px">
 <img src="src/assets/captures/3.jpg" margin-right="100px" style="margin: 50px" width="200px" height="400px">
-<img src="src/assets/captures/10.jpg" margin-right="100px" style="margin: 50px" width="200px" height="400px">
 
 
 
@@ -73,11 +77,16 @@ DEFINITIONS, ACRONYMS AND ABBREVIATIONS
 
 
 <img src="src/assets/captures/6.jpg" margin-right="100px" style="margin: 50px" width="200px" height="400px">
+<img src="src/assets/captures/17.jpg" margin-right="100px" style="margin: 50px" width="200px" height="400px">
 
 
 
 
 ‒	user Tracking
+
+
+<img src="src/assets/captures/16.jpg" margin-right="100px" style="margin: 50px" width="200px" height="400px">
+
 
 
 MAIN FEATURES
