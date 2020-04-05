@@ -1,13 +1,3 @@
- 	 
-
-
- 
-
-
-
- 	 
- 
-DISCLAIMER
 This software product is a proof of concept (POC) whose purpose is to demonstrate that the use of new technologies helps to manage specific situations. We have adapted this application to the crisis of the moment, certainly one of the most important facing the world: the covid-19 virus. Not all features have been fully completed.
 
 
