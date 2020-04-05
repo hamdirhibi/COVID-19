@@ -9,6 +9,11 @@ The COVID-19 virus presents an unprecedented, global challenge. When citizens ar
 THE TEAM
 
 
+<img src="src/assets/captures/5.jpg" margin-right="100px" style="margin: 50px" width="200px" height="400px">
+
+
+
+
 COVID-ASSIST is a Mobile (android and ios), Desktop and web application   developed by Mr. RhibiHamdi , Mr. Skander Ben Khelil , Dr. Mokhtar Sellami , Dr. Ramzi Guetari and  Pr. NaoufelKraiem.
 DEFINITIONS, ACRONYMS AND ABBREVIATIONS
 
@@ -16,25 +21,60 @@ DEFINITIONS, ACRONYMS AND ABBREVIATIONS
 ‒	Fake news 
 
 
+<img src="src/assets/captures/8.jpg" margin-right="100px" style="margin: 50px" width="200px" height="400px">
+
+
 ‒	Chat-bot
+
+
+<img src="src/assets/captures/4.jpg" margin-right="100px" style="margin: 50px" width="200px" height="400px">
+
 
 
 ‒	Internationalization (multi languages :arabic , english , french)  
 
 
+<img src="src/assets/captures/1.jpg" margin-right="100px" style="margin: 50px" width="200px" height="400px">
+
+
+
+
 ‒	Kids game 
+
+
+<img src="src/assets/captures/9.jpg" margin-right="100px" style="margin: 50px" width="200px" height="400px">
+
 
 
 ‒	Best Practices 
 
 
+
+
+
+
+
 ‒	Best suggestions 
+
+
+<img src="src/assets/captures/3.jpg" margin-right="100px" style="margin: 50px" width="200px" height="400px">
+<img src="src/assets/captures/10.jpg" margin-right="100px" style="margin: 50px" width="200px" height="400px">
+
 
 
 ‒	Quiz 
 
 
+<img src="src/assets/captures/2.jpg" margin-right="100px" style="margin: 50px" width="200px" height="400px">
+
+
+
 ‒	Test Yourself  
+
+
+<img src="src/assets/captures/6.jpg" margin-right="100px" style="margin: 50px" width="200px" height="400px">
+
+
 
 
 ‒	user Tracking
